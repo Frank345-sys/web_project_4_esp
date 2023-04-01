@@ -1,0 +1,19 @@
+.profile-info__image {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .profile-info__image {
+    height: 110px;
+    width: 110px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .profile-info__image {
+    margin-bottom: 30px;
+  }
+}
+

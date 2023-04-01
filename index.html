@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <title>De padria a padria</title>
+  </head>
+  <body>
+    <div class="page">
+      <div class="content-modal">
+        <div class="modal">
+          <h2 class="modal__title">Editar perfil</h2>
+          <button type="button" class="modal__button-close">
+            <img alt="icono editar" src="./images/vector_close_icon.png" />
+          </button>
+          <form action="modal-form">
+            <input
+              class="modal-form__label modal-form__label_name"
+              type="text"
+              name="name"
+            />
+            <input
+              class="modal-form__label modal-form__label_ocupation"
+              type="text"
+              name="ocupation"
+            />
+            <button class="modal-form__button-save" type="submit">
+              Guardar
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <header class="header">
+        <div class="content-header">
+          <img
+            alt="Logo-header"
+            src="./images/logo/logo.png"
+            class="content-header__logo"
+          />
+        </div>
+      </header>
+      <main class="content">
+        <section class="profile">
+          <div class="content-profile">
+            <div class="profile-info">
+              <img
+                alt="foto de perfil"
+                src="./images/profile.jpg"
+                class="profile-info__image"
+              />
+              <div class="content-prof-info-text">
+                <h2 class="content-prof-info-text__name">Jacques Cousteau</h2>
+                <button
+                  type="button"
+                  class="content-prof-info-text__edit-button"
+                >
+                  <img
+                    alt="icono editar"
+                    src="./images/vector_pencil_icon.png"
+                  />
+                </button>
+                <h3 class="content-prof-info-text__ocupation">Explorador</h3>
+              </div>
+            </div>
+            <button type="button" class="content-profile__add-button">
+              <img alt="icono agregar" src="./images/vector_add_icon.png" />
+            </button>
+          </div>
+        </section>
+
+        <section class="photos-grid">
+          <div class="content-photos">
+            <article class="card">
+              <img
+                alt="imagen ilustrativa 1"
+                src="./images/valle_de_yosemite.jpg"
+                class="card__photo-item"
+              />
+              <div class="content-footer-card">
+                <h2 class="content-footer-card__title">Valle de Yosemite</h2>
+                <img
+                  alt="icono heart"
+                  src="./images/vector_heart_icon.png"
+                  class="content-footer-card__icon"
+                />
+              </div>
+            </article>
+            <article class="card">
+              <img
+                alt="imagen ilustrativa 2"
+                src="./images/lago_de_louise.jpg"
+                class="card__photo-item"
+              />
+              <div class="content-footer-card">
+                <h2 class="content-footer-card__title">Lago Louise</h2>
+                <img
+                  alt="icono heart"
+                  src="./images/vector_heart_icon.png"
+                  class="content-footer-card__icon"
+                />
+              </div>
+            </article>
+            <article class="card">
+              <img
+                alt="imagen ilustrativa 3"
+                src="./images/montañas_calvas.jpg"
+                class="card__photo-item"
+              />
+              <div class="content-footer-card">
+                <h2 class="content-footer-card__title">Montañas Calvas</h2>
+                <img
+                  alt="icono heart"
+                  src="./images/vector_heart_icon.png"
+                  class="content-footer-card__icon"
+                />
+              </div>
+            </article>
+            <article class="card">
+              <img
+                alt="imagen ilustrativa 4"
+                src="./images/latermar.jpg"
+                class="card__photo-item"
+              />
+              <div class="content-footer-card">
+                <h2 class="content-footer-card__title">Latemar</h2>
+                <img
+                  alt="icono heart"
+                  src="./images/vector_heart_icon.png"
+                  class="content-footer-card__icon"
+                />
+              </div>
+            </article>
+            <article class="card">
+              <img
+                alt="imagen ilustrativa 5"
+                src="./images/vanoise_national.jpg"
+                class="card__photo-item"
+              />
+              <div class="content-footer-card">
+                <h2 class="content-footer-card__title">Vanoise National</h2>
+                <img
+                  alt="icono heart"
+                  src="./images/vector_heart_icon.png"
+                  class="content-footer-card__icon"
+                />
+              </div>
+            </article>
+            <article class="card">
+              <img
+                alt="imagen ilustrativa 6"
+                src="./images/lago_di_braies.jpg"
+                class="card__photo-item"
+              />
+              <div class="content-footer-card">
+                <h2 class="content-footer-card__title">Lago di Braies</h2>
+                <img
+                  alt="icono heart"
+                  src="./images/vector_heart_icon.png"
+                  class="content-footer-card__icon"
+                />
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <div class="content-footer">
+          <p class="content-footer__copyright">© 2021 Alrededor de los EEUU</p>
+        </div>
+      </footer>
+    </div>
+    <script src="./scripts/modal.js"></script>
+  </body>
+</html>

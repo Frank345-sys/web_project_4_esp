@@ -1,0 +1,14 @@
+.modal-form__label {
+  height: 50px;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.modal-form__label:focus {
+  border-radius: 2px;
+  outline: 3px solid rgb(0, 123, 255);
+}

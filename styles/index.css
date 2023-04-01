@@ -1,0 +1,121 @@
+@import url(../vendor/normalize.css);
+@import url(../fonts/inter-web/inter.css);
+@import url(../blocks/root/root.css);
+
+/*bloque*/
+@import url(../blocks/header/header.css);
+/*bloque*/
+
+/*bloque*/
+@import url(../blocks/content-header/content-header.css);
+/*bloque*/
+
+/*bloque*/
+@import url(../blocks/profile/profile.css);
+/*bloque*/
+
+/*bloque*/
+@import url(../blocks/content-profile/content-profile.css);
+/*bloque*/
+
+/*elementos*/
+@import url(../blocks/content-profile/__add-button/content-profile__add-button.css);
+/*elementos*/
+
+/*bloque*/
+@import url(../blocks/profile-info/profile-info.css);
+/*bloque*/
+
+/*elementos*/
+@import url(../blocks/profile-info/__image/profile-info__image.css);
+/*elementos*/
+
+/*bloque*/
+@import url(../blocks/content-prof-info-text/content-prof-info-text.css);
+/*bloque*/
+
+/*elementos*/
+@import url(../blocks/content-prof-info-text/__edit-button/content-prof-info-text__edit-button.css);
+@import url(../blocks/content-prof-info-text/__name/content-prof-info-text__name.css);
+@import url(../blocks/content-prof-info-text/__ocupation/content-prof-info-text__ocupation.css);
+/*elementos*/
+
+/*bloque*/
+@import url(../blocks/intro/intro.css);
+/*bloque*/
+
+/*bloque*/
+@import url(../blocks/content-text/content-text.css);
+/*bloque*/
+
+/*elementos*/
+@import url(../blocks/content-text/__title/content-text__title.css);
+@import url(../blocks/content-text/__paragraph/content-text__paragraph.css);
+@import url(../blocks/content-text/__paragraph/_display-flex/content-text__paragraph_display-flex.css); /*<--modificador*/
+@import url(../blocks/content-text/__paragraph-author/content-text__paragraph-author.css);
+/*elementos*/
+
+/*bloque*/
+@import url(../blocks/photos-grid/photos-grid.css);
+/*bloque*/
+
+/*bloque*/
+@import url(../blocks/content-photos/content-photos.css);
+/*bloque*/
+
+/*bloque*/
+@import url(../blocks/card/card.css);
+/*bloque*/
+
+/*elementos*/
+@import url(../blocks/card/__photo-item/card__photo-item.css);
+/*elementos*/
+
+/*bloque*/
+@import url(../blocks/content-footer-card/content-footer-card.css);
+/*bloque*/
+
+/*elementos*/
+@import url(../blocks/content-footer-card/__title/content-footer-card__title.css);
+@import url(../blocks/content-footer-card/__icon/content-footer-card__icon.css);
+/*elementos*/
+
+/*bloque*/
+@import url(../blocks/footer/footer.css);
+/*bloque*/
+
+/*bloque*/
+@import url(../blocks/content-footer/content-footer.css);
+/*bloque*/
+
+/*elementos*/
+@import url(../blocks/content-footer/__copyright/content-footer__copyright.css);
+/*elementos*/
+
+/*bloque*/
+@import url(../blocks/modal/modal.css);
+/*bloque*/
+
+/*elementos*/
+@import url(../blocks/modal/__title/modal__title.css);
+@import url(../blocks/modal/__button-close/modal__button-close.css);
+/*elementos*/
+
+/*bloque*/
+@import url(../blocks/content-modal/content-modal.css);
+/*bloque*/
+
+/*modificador*/
+@import url(../blocks/content-modal/_visibility/_visible/content-modal_visibility_visible.css);
+/*modificador*/
+
+/*bloque*/
+@import url(../blocks/modal-form/modal-form.css);
+/*bloque*/
+
+/*elementos y modificadores*/
+@import url(../blocks/modal-form/__label/modal-form__label.css);
+@import url(../blocks/modal-form/__label/_name/modal-form__label_name.css);
+@import url(../blocks/modal-form/__label/_ocupation/modal-form__label_ocupation.css);
+@import url(../blocks/modal-form/__button-save/modal-form__button-save.css);
+/*elementos y modificadores*/
