@@ -1,19 +1,14 @@
-.content-modal {
+.content-pop-up {
   display: flex;
   align-items: center;
   justify-content: center;
   position: fixed;
   height: 100%;
   width: 100%;
+  padding: 0 20px;
   z-index: 1;
   box-sizing: border-box;
   visibility: hidden;
   opacity: 0;
-  transition: all 0.3s;
-}
-
-@media screen and (max-width: 768px) {
-  .content-modal {
-    padding: 0 19px;
-  }
+  transition: all 0.4s;
 }

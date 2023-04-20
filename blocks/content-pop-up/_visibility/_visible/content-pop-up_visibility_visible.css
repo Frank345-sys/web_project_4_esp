@@ -1,0 +1,6 @@
+.content-pop-up_visibility_visible {
+  visibility: visible;
+  background-color: rgba(0, 0, 0, 0.9);
+  opacity: 1;
+  transition: all 0.4s;
+}

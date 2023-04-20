@@ -9,8 +9,8 @@
   </head>
   <body>
     <div class="page">
-      <div class="content-modal">
-        <div class="modal">
+      <div class="content-modal content-modal_edit">
+        <div class="modal modal_edit">
           <h2 class="modal__title">Editar perfil</h2>
           <button type="button" class="modal__button-close">
             <img alt="icono editar" src="./images/vector_close_icon.png" />
@@ -20,16 +20,60 @@
               class="modal-form__label modal-form__label_name"
               type="text"
               name="name"
+              placeholder="Ingrese el nombre"
             />
             <input
               class="modal-form__label modal-form__label_ocupation"
               type="text"
               name="ocupation"
+              placeholder="Ingrese la ocupación"
             />
-            <button class="modal-form__button-save" type="submit">
+            <button
+              class="modal-form__button modal-form__button_edit"
+              type="submit"
+            >
               Guardar
             </button>
           </form>
+        </div>
+      </div>
+
+      <div class="content-modal content-modal_add">
+        <div class="modal modal_add">
+          <h2 class="modal__title">Nuevo lugar</h2>
+          <button type="button" class="modal__button-close">
+            <img alt="icono cerrar" src="./images/vector_close_icon.png" />
+          </button>
+          <form action="modal-form">
+            <input
+              class="modal-form__label modal-form__label_name-place"
+              type="text"
+              name="name"
+              placeholder="Ingrese el nombre del lugar"
+            />
+            <input
+              class="modal-form__label modal-form__label_url"
+              type="text"
+              name="url"
+              placeholder="Ingrese la URL del lugar"
+            />
+            <button
+              class="modal-form__button modal-form__button_add"
+              type="submit"
+            >
+              Crear
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="content-pop-up">
+        <div class="pop-up-window">
+          <button type="button" class="pop-up-window__button-close">
+            <img alt="icono cerrar" src="./images/vector_close_icon.png" />
+          </button>
+          <img src="" alt="Vista previa imagen card" />
+          <h3></h3>
         </div>
       </div>
 
@@ -74,93 +118,123 @@
         <section class="photos-grid">
           <div class="content-photos">
             <article class="card">
+              <button type="button" class="card__button-delete">
+                <img alt="icono borrar" src="./images/vector_delete_icon.png" />
+              </button>
               <img
                 alt="imagen ilustrativa 1"
-                src="./images/valle_de_yosemite.jpg"
+                src="https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/yosemite.jpg"
                 class="card__photo-item"
               />
               <div class="content-footer-card">
                 <h2 class="content-footer-card__title">Valle de Yosemite</h2>
-                <img
-                  alt="icono heart"
-                  src="./images/vector_heart_icon.png"
-                  class="content-footer-card__icon"
-                />
+                <button type="button" class="heart-button">
+                  <img
+                    alt="icono heart"
+                    src="./images/vector_heart_icon.png"
+                    class="heart-button__icon"
+                  />
+                </button>
               </div>
             </article>
             <article class="card">
+              <button type="button" class="card__button-delete">
+                <img alt="icono borrar" src="./images/vector_delete_icon.png" />
+              </button>
               <img
                 alt="imagen ilustrativa 2"
-                src="./images/lago_de_louise.jpg"
+                src="https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lake-louise.jpg"
                 class="card__photo-item"
               />
               <div class="content-footer-card">
                 <h2 class="content-footer-card__title">Lago Louise</h2>
-                <img
-                  alt="icono heart"
-                  src="./images/vector_heart_icon.png"
-                  class="content-footer-card__icon"
-                />
+                <button type="button" class="heart-button">
+                  <img
+                    alt="icono heart"
+                    src="./images/vector_heart_icon.png"
+                    class="heart-button__icon"
+                  />
+                </button>
               </div>
             </article>
             <article class="card">
+              <button type="button" class="card__button-delete">
+                <img alt="icono borrar" src="./images/vector_delete_icon.png" />
+              </button>
               <img
                 alt="imagen ilustrativa 3"
-                src="./images/montañas_calvas.jpg"
+                src="https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/bald-mountains.jpg"
                 class="card__photo-item"
               />
               <div class="content-footer-card">
                 <h2 class="content-footer-card__title">Montañas Calvas</h2>
-                <img
-                  alt="icono heart"
-                  src="./images/vector_heart_icon.png"
-                  class="content-footer-card__icon"
-                />
+                <button type="button" class="heart-button">
+                  <img
+                    alt="icono heart"
+                    src="./images/vector_heart_icon.png"
+                    class="heart-button__icon"
+                  />
+                </button>
               </div>
             </article>
             <article class="card">
+              <button type="button" class="card__button-delete">
+                <img alt="icono borrar" src="./images/vector_delete_icon.png" />
+              </button>
               <img
                 alt="imagen ilustrativa 4"
-                src="./images/latermar.jpg"
+                src="https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/latemar.jpg"
                 class="card__photo-item"
               />
               <div class="content-footer-card">
                 <h2 class="content-footer-card__title">Latemar</h2>
-                <img
-                  alt="icono heart"
-                  src="./images/vector_heart_icon.png"
-                  class="content-footer-card__icon"
-                />
+                <button type="button" class="heart-button">
+                  <img
+                    alt="icono heart"
+                    src="./images/vector_heart_icon.png"
+                    class="heart-button__icon"
+                  />
+                </button>
               </div>
             </article>
             <article class="card">
+              <button type="button" class="card__button-delete">
+                <img alt="icono borrar" src="./images/vector_delete_icon.png" />
+              </button>
               <img
                 alt="imagen ilustrativa 5"
-                src="./images/vanoise_national.jpg"
+                src="https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/vanoise.jpg"
                 class="card__photo-item"
               />
               <div class="content-footer-card">
                 <h2 class="content-footer-card__title">Vanoise National</h2>
-                <img
-                  alt="icono heart"
-                  src="./images/vector_heart_icon.png"
-                  class="content-footer-card__icon"
-                />
+                <button type="button" class="heart-button">
+                  <img
+                    alt="icono heart"
+                    src="./images/vector_heart_icon.png"
+                    class="heart-button__icon"
+                  />
+                </button>
               </div>
             </article>
             <article class="card">
+              <button type="button" class="card__button-delete">
+                <img alt="icono borrar" src="./images/vector_delete_icon.png" />
+              </button>
               <img
                 alt="imagen ilustrativa 6"
-                src="./images/lago_di_braies.jpg"
+                src="https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg"
                 class="card__photo-item"
               />
               <div class="content-footer-card">
                 <h2 class="content-footer-card__title">Lago di Braies</h2>
-                <img
-                  alt="icono heart"
-                  src="./images/vector_heart_icon.png"
-                  class="content-footer-card__icon"
-                />
+                <button type="button" class="heart-button">
+                  <img
+                    alt="icono heart"
+                    src="./images/vector_heart_icon.png"
+                    class="heart-button__icon"
+                  />
+                </button>
               </div>
             </article>
           </div>
@@ -172,6 +246,29 @@
         </div>
       </footer>
     </div>
-    <script src="./scripts/modal.js"></script>
+
+    <template id="card-template"
+      ><article class="card">
+        <button type="button" class="card__button-delete">
+          <img alt="icono borrar" src="./images/vector_delete_icon.png" />
+        </button>
+        <img alt="imagen ilustrativa" src="" class="card__photo-item" />
+        <div class="content-footer-card">
+          <h2 class="content-footer-card__title">Latemar</h2>
+          <button type="button" class="heart-button">
+            <img
+              alt="icono heart"
+              src="./images/vector_heart_icon.png"
+              class="heart-button__icon"
+            />
+          </button>
+        </div></article
+    ></template>
+
+    <script src="./scripts/modal-add.js"></script>
+    <script src="./scripts/modal-edit.js"></script>
+    <script src="./scripts/icon-like.js"></script>
+    <script src="./scripts/delete-card.js"></script>
+    <script src="./scripts/pop-up-window.js"></script>
   </body>
 </html>

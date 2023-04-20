@@ -1,5 +1,6 @@
 .content-modal_visibility_visible {
-  background-color: rgba(0, 0, 0, 0.7);
-  transition: background-color 0.5s;
   visibility: visible;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 1;
+  transition: opacity 0.3s;
 }
