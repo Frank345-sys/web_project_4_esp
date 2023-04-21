@@ -3,7 +3,7 @@ let editButton = document.querySelector(".content-prof-info-text__edit-button");
 
 let modalEdit = document.querySelector(".modal_edit");
 let modalEditCloseButton = modalEdit.children[1];
-let modalEditSaveButton = document.querySelector(".modal-form__button_edit");
+let modalEditSaveButton = document.querySelector(".button_edit");
 
 /*document.querySelector(".modal__button-close");*/
 
@@ -15,8 +15,8 @@ let name = document.querySelector(".content-prof-info-text__name");
 let ocupation = document.querySelector(".content-prof-info-text__ocupation");
 
 // Inputs
-let inputName = document.querySelector(".modal-form__label_name");
-let inputOcupation = document.querySelector(".modal-form__label_ocupation");
+let inputName = document.querySelector(".label_name");
+let inputOcupation = document.querySelector(".label_ocupation");
 
 function openAndCloseFormEdit() {
   contentModalEdit.classList.toggle("content-modal_visibility_visible");

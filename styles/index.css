@@ -104,14 +104,25 @@
 @import url(../blocks/modal-form/modal-form.css);
 /*bloque*/
 
-/*elementos y modificadores*/
-@import url(../blocks/modal-form/__label/modal-form__label.css);
-@import url(../blocks/modal-form/__label/_name/modal-form__label_name.css);
-@import url(../blocks/modal-form/__label/_ocupation/modal-form__label_ocupation.css);
-@import url(../blocks/modal-form/__label/_name-place/modal-form__label_name-place.css);
-@import url(../blocks/modal-form/__label/_url/modal-form__label_url.css);
-@import url(../blocks/modal-form/__button/modal-form__button.css);
-/*elementos y modificadores*/
+/*bloque*/
+@import url(../blocks/label/label.css);
+/*bloque*/
+
+/*modificadores*/
+@import url(../blocks/label/_name/label_name.css);
+@import url(../blocks/label/_ocupation/label_ocupation.css);
+@import url(../blocks/label/_name-place/label_name-place.css);
+@import url(../blocks/label/_url/label_url.css);
+/*modificadores*/
+
+/*bloque*/
+@import url(../blocks/button/button.css);
+/*bloque*/
+
+/*modificadores*/
+@import url(../blocks/button/_edit/button_edit.css);
+@import url(../blocks/button/_add/button_add.css);
+/*modificadores*/
 
 /*bloque*/
 @import url(../blocks/content-pop-up/content-pop-up.css);

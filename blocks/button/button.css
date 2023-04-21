@@ -1,4 +1,4 @@
-.modal-form__button {
+.button {
   height: 50px;
   width: 100%;
   font-size: 18px;
@@ -10,6 +10,6 @@
   transition: opacity 0.3s;
 }
 
-.modal-form__button:hover {
+.button:hover {
   opacity: 0.8;
 }
