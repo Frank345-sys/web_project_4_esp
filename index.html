@@ -15,20 +15,34 @@
           <button type="button" class="modal__button-close">
             <img alt="icono editar" src="./images/vector_close_icon.png" />
           </button>
-          <form action="modal-form">
-            <input
-              class="label label_name"
-              type="text"
-              name="name"
-              placeholder="Ingrese el nombre"
-            />
-            <input
-              class="label label_ocupation"
-              type="text"
-              name="ocupation"
-              placeholder="Ingrese la ocupación"
-            />
-            <button class="button button_edit" type="submit">Guardar</button>
+          <form class="modal-form" novalidate>
+            <fieldset class="modal-form__set">
+              <input
+                class="input input_name"
+                id="input-name"
+                type="text"
+                name="name"
+                placeholder="Ingrese el nombre"
+                required
+                minlength="2"
+                maxlength="40"
+                value="texto"
+              />
+              <span class="error error_input-name"></span>
+              <input
+                class="input input_ocupation"
+                id="input-ocupation"
+                type="text"
+                name="ocupation"
+                placeholder="Ingrese la ocupación"
+                required
+                minlength="2"
+                maxlength="200"
+                value="texto"
+              />
+              <span class="error error_input-ocupation"></span>
+              <button class="button button_edit" type="submit">Guardar</button>
+            </fieldset>
           </form>
         </div>
       </div>
@@ -39,20 +53,30 @@
           <button type="button" class="modal__button-close">
             <img alt="icono cerrar" src="./images/vector_close_icon.png" />
           </button>
-          <form action="modal-form">
-            <input
-              class="label label_name-place"
-              type="text"
-              name="name"
-              placeholder="Ingrese el nombre del lugar"
-            />
-            <input
-              class="label label_url"
-              type="text"
-              name="url"
-              placeholder="Ingrese la URL del lugar"
-            />
-            <button class="button button_add" type="submit">Crear</button>
+          <form class="modal-form" novalidate>
+            <fieldset class="modal-form__set">
+              <input
+                class="input input_name-place"
+                id="input-name-place"
+                type="text"
+                name="name-place"
+                placeholder="Ingrese el nombre del lugar"
+                required
+                minlength="2"
+                maxlength="30"
+              />
+              <span class="error error_input-name-place"></span>
+              <input
+                class="input input_url"
+                id="input-url"
+                type="url"
+                name="url"
+                placeholder="Ingrese la URL del lugar"
+                required
+              />
+              <span class="error error_input-url"></span>
+              <button class="button button_add" type="submit">Crear</button>
+            </fieldset>
           </form>
         </div>
       </div>
@@ -62,10 +86,7 @@
           <button type="button" class="pop-up-window__button-close">
             <img alt="icono cerrar" src="./images/vector_close_icon.png" />
           </button>
-          <img
-            src="https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/vanoise.jpg"
-            alt="Vista previa imagen card"
-          />
+          <img src="" alt="Vista previa imagen card" />
           <h3></h3>
         </div>
       </div>
@@ -267,5 +288,7 @@
     <script src="./scripts/icon-like.js"></script>
     <script src="./scripts/delete-card.js"></script>
     <script src="./scripts/pop-up-window.js"></script>
+    <script src="./scripts/close-windows.js"></script>
+    <script src="./scripts/validate.js"></script>
   </body>
 </html>

@@ -104,15 +104,32 @@
 @import url(../blocks/modal-form/modal-form.css);
 /*bloque*/
 
+/*elemento*/
+@import url(../blocks/modal-form/__set/modal-form__set.css);
+/*elemento*/
+
 /*bloque*/
-@import url(../blocks/label/label.css);
+@import url(../blocks/input/input.css);
 /*bloque*/
 
 /*modificadores*/
-@import url(../blocks/label/_name/label_name.css);
-@import url(../blocks/label/_ocupation/label_ocupation.css);
-@import url(../blocks/label/_name-place/label_name-place.css);
-@import url(../blocks/label/_url/label_url.css);
+@import url(../blocks/input/_name/input_name.css);
+@import url(../blocks/input/_ocupation/input_ocupation.css);
+@import url(../blocks/input/_name-place/input_name-place.css);
+@import url(../blocks/input/_url/input_url.css);
+@import url(../blocks/input/_error-active/input_error-active.css);
+/*modificadores*/
+
+/*bloque*/
+@import url(../blocks/error/error.css);
+/*bloque*/
+
+/*modificadores*/
+@import url(../blocks/error/_active/error_active.css);
+@import url(../blocks/error/_input-name/error_input-name.css);
+@import url(../blocks/error/_input-ocupation/error_input-ocupation.css);
+@import url(../blocks/error/_input-name-place/error_input-name-place.css);
+@import url(../blocks/error/_input-url/error_input-url.css);
 /*modificadores*/
 
 /*bloque*/
@@ -122,6 +139,7 @@
 /*modificadores*/
 @import url(../blocks/button/_edit/button_edit.css);
 @import url(../blocks/button/_add/button_add.css);
+@import url(../blocks/button/_inactive/button_inactive.css);
 /*modificadores*/
 
 /*bloque*/

@@ -7,8 +7,8 @@ let modalAddCreateButton = document.querySelector(".button_add");
 let contentModalAdd = document.querySelector(".content-modal_add");
 
 // Inputs
-let inputNamePlace = document.querySelector(".label_name-place");
-let inputUrlPlace = document.querySelector(".label_url");
+let inputNamePlace = document.querySelector(".input_name-place");
+let inputUrlPlace = document.querySelector(".input_url");
 
 // contenedor de las tarjetas
 
@@ -25,62 +25,56 @@ addButton.addEventListener("click", function () {
 
 modalAddCreateButton.addEventListener("click", function (e) {
   e.preventDefault();
+  openAndCloseFormAdd();
 
-  // validamos entrada de datos
-  if (inputNamePlace.value === "" && inputUrlPlace.value === "") {
-    inputNamePlace.placeholder = "Este campo no debe estar vacio";
-    inputUrlPlace.placeholder = "Este campo no debe estar vacio";
-  } else {
-    openAndCloseFormAdd();
-    // se almacena y se clona la template card
-    const cardTemplate = document.querySelector("#card-template").content;
-    const cardElement = cardTemplate.querySelector(".card").cloneNode(true);
-    // aqui se agregan el titulo y la URL del formulario
-    cardElement.querySelector(".content-footer-card__title").textContent =
-      inputNamePlace.value;
-    cardElement.querySelector(".card__photo-item").src = inputUrlPlace.value;
+  // se almacena y se clona la template card
+  const cardTemplate = document.querySelector("#card-template").content;
+  const cardElement = cardTemplate.querySelector(".card").cloneNode(true);
 
-    // aqui se agrega el evento para like
-    cardElement
-      .querySelector(".heart-button")
-      .addEventListener("click", function () {
-        if (
-          cardElement
-            .querySelector(".heart-button__icon")
-            .getAttribute("src") === "./images/vector_heart_icon.png"
-        ) {
-          cardElement
-            .querySelector(".heart-button__icon")
-            .setAttribute("src", "./images/vector_heart_icon-black.png");
-        } else {
-          cardElement
-            .querySelector(".heart-button__icon")
-            .setAttribute("src", "./images/vector_heart_icon.png");
-        }
-      });
+  // aqui se agregan el titulo y la URL del formulario
+  cardElement.querySelector(".content-footer-card__title").textContent =
+    inputNamePlace.value;
+  cardElement.querySelector(".card__photo-item").src = inputUrlPlace.value;
 
-    // aqui se agrega el evento para eliminar la card
-    cardElement
-      .querySelector(".card__button-delete")
-      .addEventListener("click", function () {
-        cardElement.remove();
-      });
+  // aqui se agrega el evento para like
+  cardElement
+    .querySelector(".heart-button")
+    .addEventListener("click", function () {
+      if (
+        cardElement.querySelector(".heart-button__icon").getAttribute("src") ===
+        "./images/vector_heart_icon.png"
+      ) {
+        cardElement
+          .querySelector(".heart-button__icon")
+          .setAttribute("src", "./images/vector_heart_icon-black.png");
+      } else {
+        cardElement
+          .querySelector(".heart-button__icon")
+          .setAttribute("src", "./images/vector_heart_icon.png");
+      }
+    });
 
-    // aqui se agrega el evento para la vista previa de la imagen
-    cardElement
-      .querySelector(".card__photo-item")
-      .addEventListener("click", function () {
-        disableScroll();
-        popUpWindow.children[0].children[1].src = this.getAttribute("src");
-        popUpWindow.children[0].children[2].textContent =
-          this.nextElementSibling.children[0].textContent;
-        popUpWindow.classList.toggle("content-pop-up_visibility_visible");
-      });
+  // aqui se agrega el evento para eliminar la card
+  cardElement
+    .querySelector(".card__button-delete")
+    .addEventListener("click", function () {
+      cardElement.remove();
+    });
 
-    // finalmente aqui se agrega la card con los eventos, su titulo y url al contenedor de las cards
-    cardsContainer.prepend(cardElement);
-    enableScroll();
-  }
+  // aqui se agrega el evento para la vista previa de la imagen
+  cardElement
+    .querySelector(".card__photo-item")
+    .addEventListener("click", function () {
+      disableScroll();
+      popUpWindow.children[0].children[1].src = this.getAttribute("src");
+      popUpWindow.children[0].children[2].textContent =
+        this.nextElementSibling.children[0].textContent;
+      popUpWindow.classList.toggle("content-pop-up_visibility_visible");
+    });
+
+  // finalmente aqui se agrega la card con los eventos, su titulo y url al contenedor de las cards
+  cardsContainer.prepend(cardElement);
+  enableScroll();
 });
 
 modalAddCloseButton.addEventListener("click", function () {

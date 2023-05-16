@@ -15,8 +15,8 @@ let name = document.querySelector(".content-prof-info-text__name");
 let ocupation = document.querySelector(".content-prof-info-text__ocupation");
 
 // Inputs
-let inputName = document.querySelector(".label_name");
-let inputOcupation = document.querySelector(".label_ocupation");
+let inputName = document.querySelector(".input_name");
+let inputOcupation = document.querySelector(".input_ocupation");
 
 function openAndCloseFormEdit() {
   contentModalEdit.classList.toggle("content-modal_visibility_visible");
