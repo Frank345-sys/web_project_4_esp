@@ -7,7 +7,6 @@
   color: white;
   border: none;
   border-radius: 2px;
-  transition: opacity 0.3s;
   margin-top: 35px;
   transition: all 0.3s;
 }
