@@ -131,6 +131,7 @@
 
         <section class="photos-grid">
           <div class="content-photos">
+            <!--
             <article class="card">
               <button type="button" class="card__button-delete">
                 <img alt="icono borrar" src="./images/vector_delete_icon.png" />
@@ -251,7 +252,7 @@
                 </button>
               </div>
             </article>
-          </div>
+          --></div>
         </section>
       </main>
       <footer class="footer">
@@ -261,7 +262,7 @@
       </footer>
     </div>
 
-    <template id="card-template"
+    <template class="card-template"
       ><article class="card">
         <button type="button" class="card__button-delete">
           <img alt="icono borrar" src="./images/vector_delete_icon.png" />
@@ -282,13 +283,17 @@
           </button>
         </div></article
     ></template>
-
+    <!--
     <script src="./scripts/modal-add.js"></script>
     <script src="./scripts/modal-edit.js"></script>
     <script src="./scripts/icon-like.js"></script>
     <script src="./scripts/delete-card.js"></script>
     <script src="./scripts/pop-up-window.js"></script>
     <script src="./scripts/close-windows.js"></script>
-    <script src="./scripts/validate.js"></script>
+    <script src="./scripts/validate.js"></script>-->
+    <script type="module" src="./scripts/Index.js"></script>
+    <script type="module" src="./scripts/Card.js"></script>
+    <script type="module" src="./scripts/FormValidator.js"></script>
+    <script type="module" src="./scripts/Forms.js"></script>
   </body>
 </html>
