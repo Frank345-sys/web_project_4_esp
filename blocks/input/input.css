@@ -1,12 +1,12 @@
 .input {
-  height: 45px;
+  height: 48px;
   width: 100%;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
-  margin: 14px 0;
+  margin: 10px 0;
   padding-left: 10px;
   box-sizing: border-box;
   outline: 3px solid white;
