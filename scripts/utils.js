@@ -27,7 +27,7 @@ class popUp {
     this.popUpWindow.classList.toggle("content-pop-up_visibility_visible");
   }
 
-  _modalButtonCloseEventListener() {
+  _popUpButtonCloseEventListener() {
     this.modalButtonClose.addEventListener("click", () => {
       this._openOrClosePopUp();
       scroll.enableScroll();
@@ -54,7 +54,7 @@ class popUp {
   }
 
   setEventListeners() {
-    this._modalButtonCloseEventListener();
+    this._popUpButtonCloseEventListener();
     this._popUpWindowEventListener();
   }
 }
