@@ -61,6 +61,13 @@ class Forms {
       }
     });
   }
+
+  setEventListeners() {
+    this._buttonOpenEventListener();
+    this._buttonCloseEventListener();
+    this._buttonSubmitEventListener();
+    this._contentModalEventListener();
+  }
 }
 
 class FormAdd extends Forms {
@@ -112,10 +119,7 @@ class FormAdd extends Forms {
   }
 
   setEventListeners() {
-    this._buttonOpenEventListener();
-    this._buttonCloseEventListener();
-    this._buttonSubmitEventListener();
-    this._contentModalEventListener();
+    super.setEventListeners();
   }
 }
 
@@ -169,10 +173,7 @@ class FormEdit extends Forms {
   }
 
   setEventListeners() {
-    this._buttonOpenEventListener();
-    this._buttonCloseEventListener();
-    this._buttonSubmitEventListener();
-    this._contentModalEventListener();
+    super.setEventListeners();
   }
 }
 
