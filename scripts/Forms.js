@@ -1,8 +1,8 @@
-import { Card, contentCardList } from "./Card.js";
-import { Scroll } from "./Index.js";
+import { Card, contentCardList, renderCards } from "./Card.js";
 
-const contentModal = document.querySelectorAll(".content-modal");
+import { Scroll, popUpWindow, renderUtils } from "./utils.js";
 
+//const Forms = (() => {
 const scroll = new Scroll();
 
 class Forms {
@@ -11,13 +11,15 @@ class Forms {
     buttonCloseModal,
     buttonSubmit,
     firstInput,
-    secondInput
+    secondInput,
+    contentModal
   ) {
     this._buttonOpen = buttonOpenModal;
     this._buttonClose = buttonCloseModal;
     this._buttonSubmit = buttonSubmit;
     this._fistInput = firstInput;
     this._secondInput = secondInput;
+    this._contentModal = contentModal;
   }
 
   _openOrCloseForm() {
@@ -40,8 +42,24 @@ class Forms {
   }
 
   _contentModalEventListener() {
-    this._openOrCloseForm();
-    scroll.enableScroll();
+    this._contentModal.addEventListener("click", (evt) => {
+      if (evt.target.classList.contains("content-modal_visibility_visible")) {
+        this._openOrCloseForm();
+        scroll.enableScroll();
+      }
+    });
+
+    document.addEventListener("keydown", (evt) => {
+      if (
+        evt.key === "Escape" &&
+        this._contentModal.classList.contains(
+          "content-modal_visibility_visible"
+        )
+      ) {
+        this._contentModal.classList.remove("content-modal_visibility_visible");
+        scroll.enableScroll();
+      }
+    });
   }
 }
 
@@ -59,9 +77,9 @@ class FormAdd extends Forms {
       buttonCloseModal,
       buttonSubmit,
       firstInput,
-      secondInput
+      secondInput,
+      contentModal
     );
-    this._contentModal = contentModal;
   }
 
   _buttonOpenEventListener() {
@@ -90,11 +108,7 @@ class FormAdd extends Forms {
   }
 
   _contentModalEventListener() {
-    this._contentModal.addEventListener("click", (evt) => {
-      if (evt.target.classList.contains("content-modal_visibility_visible")) {
-        super._contentModalEventListener();
-      }
-    });
+    super._contentModalEventListener();
   }
 
   setEventListeners() {
@@ -121,9 +135,9 @@ class FormEdit extends Forms {
       buttonCloseModal,
       buttonSubmit,
       firstInput,
-      secondInput
+      secondInput,
+      contentModal
     );
-    this._contentModal = contentModal;
     this._firstLabel = firstLabel;
     this._secondLabel = secondLabel;
   }
@@ -151,11 +165,7 @@ class FormEdit extends Forms {
   }
 
   _contentModalEventListener() {
-    this._contentModal.addEventListener("click", (evt) => {
-      if (evt.target.classList.contains("content-modal_visibility_visible")) {
-        super._contentModalEventListener();
-      }
-    });
+    super._contentModalEventListener();
   }
 
   setEventListeners() {
@@ -208,4 +218,6 @@ const renderForms = () => {
   formAdd.setEventListeners();
 };
 
-renderForms();
+//})();
+
+export { renderForms };

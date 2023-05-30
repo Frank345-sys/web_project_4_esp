@@ -1,62 +1,53 @@
-//(function () {
-const contentModal = document.querySelectorAll(".content-modal");
+import { Scroll, popUpWindow, renderUtils } from "./utils.js";
 
-const popUpWindow = document.querySelector(".content-pop-up");
+import { Card, contentCardList, renderCards } from "./Card.js";
 
-class Scroll {
-  disableScroll() {
-    let x = window.scrollX;
-    let y = window.scrollY;
-    window.onscroll = function () {
-      window.scrollTo(x, y);
-    };
-  }
+import { renderForms } from "./Forms.js";
 
-  enableScroll() {
-    window.onscroll = null;
-  }
-}
+import { renderFormValidator } from "./FormValidator.js";
+
+//const Index = (() => {
+const initialCards = [
+  {
+    name: "Valle de Yosemite",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/yosemite.jpg",
+  },
+  {
+    name: "Lago Louise",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lake-louise.jpg",
+  },
+  {
+    name: "Montañas Calvas",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/bald-mountains.jpg",
+  },
+  {
+    name: "Latemar",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/latemar.jpg",
+  },
+  {
+    name: "Parque Nacional de la Vanoise",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/vanoise.jpg",
+  },
+  {
+    name: "Lago di Braies",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg",
+  },
+];
 
 const renderIndex = () => {
-  const scroll = new Scroll();
+  //Se carga el Script Utils renderUtils();
+  renderUtils();
 
-  popUpWindow.children[0].children[0].addEventListener("click", function () {
-    popUpWindow.classList.toggle("content-pop-up_visibility_visible");
-    scroll.enableScroll();
-  });
+  //Se carga el Script de las tarjetas a la pagina web
+  renderCards(initialCards);
 
-  popUpWindow.addEventListener("click", function (evt) {
-    if (evt.target.classList.contains("content-pop-up_visibility_visible")) {
-      this.classList.remove("content-pop-up_visibility_visible");
-      scroll.enableScroll();
-    }
-  });
+  //Se carga el Script de los formularios para manipularlos
+  renderForms();
 
-  document.addEventListener("keydown", (evt) => {
-    if (
-      evt.key === "Escape" &&
-      contentModal[0].classList.contains("content-modal_visibility_visible")
-    ) {
-      contentModal[0].classList.remove("content-modal_visibility_visible");
-      scroll.enableScroll();
-    } else if (
-      evt.key === "Escape" &&
-      contentModal[1].classList.contains("content-modal_visibility_visible")
-    ) {
-      contentModal[1].classList.remove("content-modal_visibility_visible");
-      scroll.enableScroll();
-    } else if (
-      evt.key === "Escape" &&
-      popUpWindow.classList.contains("content-pop-up_visibility_visible")
-    ) {
-      popUpWindow.classList.remove("content-pop-up_visibility_visible");
-      scroll.enableScroll();
-    }
-  });
+  //Se carga el Script para validar los formularios
+  renderFormValidator();
 };
 
 renderIndex();
-
-export { popUpWindow, Scroll };
 
 //})();
