@@ -1,4 +1,4 @@
-//(function () {
+//const Card = (() => {
 
 import { Scroll, popUpWindow, renderUtils } from "./utils.js";
 
@@ -37,7 +37,10 @@ class Card {
   }
 
   _removeCard() {
-    this._element.remove();
+    this._element.classList.add("card_delete");
+    setTimeout(() => {
+      this._element.remove();
+    }, 200);
   }
 
   _likeCard() {
