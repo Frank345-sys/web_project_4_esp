@@ -1,0 +1,160 @@
+@import url(./vendor/normalize.css);
+@import url(../fonts/inter-web/inter.css);
+@import url(./blocks/root/root.css);
+
+/*bloque*/
+@import url(./blocks/header/header.css);
+/*bloque*/
+
+/*bloque*/
+@import url(./blocks/content-header/content-header.css);
+/*bloque*/
+
+/*bloque*/
+@import url(./blocks/profile/profile.css);
+/*bloque*/
+
+/*bloque*/
+@import url(./blocks/content-profile/content-profile.css);
+/*bloque*/
+
+/*elementos*/
+@import url(./blocks/content-profile/__add-button/content-profile__add-button.css);
+/*elementos*/
+
+/*bloque*/
+@import url(./blocks/profile-info/profile-info.css);
+/*bloque*/
+
+/*elementos*/
+@import url(./blocks/profile-info/__image/profile-info__image.css);
+/*elementos*/
+
+/*bloque*/
+@import url(./blocks/content-prof-info-text/content-prof-info-text.css);
+/*bloque*/
+
+/*elementos*/
+@import url(./blocks/content-prof-info-text/__edit-button/content-prof-info-text__edit-button.css);
+@import url(./blocks/content-prof-info-text/__name/content-prof-info-text__name.css);
+@import url(./blocks/content-prof-info-text/__ocupation/content-prof-info-text__ocupation.css);
+/*elementos*/
+
+/*bloque*/
+@import url(./blocks/photos-grid/photos-grid.css);
+/*bloque*/
+
+/*bloque*/
+@import url(./blocks/content-photos/content-photos.css);
+/*bloque*/
+
+/*bloque*/
+@import url(./blocks/card/card.css);
+/*bloque*/
+
+/*elementos y modificadores*/
+@import url(./blocks/card/_delete/card_delete.css);
+@import url(./blocks/card/__photo-item/card__photo-item.css);
+@import url(./blocks/card/__button-delete/card__button-delete.css);
+/*elementos y modificadores*/
+
+/*bloque*/
+@import url(./blocks/content-footer-card/content-footer-card.css);
+/*bloque*/
+
+/*elementos*/
+@import url(./blocks/content-footer-card/__title/content-footer-card__title.css);
+/*elementos*/
+
+/*bloque*/
+@import url(./blocks/heart-button/heart-button.css);
+/*bloque*/
+
+/*bloque*/
+@import url(./blocks/footer/footer.css);
+/*bloque*/
+
+/*bloque*/
+@import url(./blocks/content-footer/content-footer.css);
+/*bloque*/
+
+/*elementos*/
+@import url(./blocks/content-footer/__copyright/content-footer__copyright.css);
+/*elementos*/
+
+/*bloque*/
+@import url(./blocks/modal/modal.css);
+/*bloque*/
+
+/*elementos y modificadores*/
+@import url(./blocks/modal/_edit/modal_edit.css);
+@import url(./blocks/modal/_add/modal_add.css);
+@import url(./blocks/modal/__title/modal__title.css);
+@import url(./blocks/modal/__button-close/modal__button-close.css);
+/*elementos y modificadores*/
+
+/*bloque*/
+@import url(./blocks/content-modal/content-modal.css);
+/*bloque*/
+
+/*modificador*/
+@import url(./blocks/content-modal/_visibility/_visible/content-modal_visibility_visible.css);
+/*modificador*/
+
+/*bloque*/
+@import url(./blocks/modal-form/modal-form.css);
+/*bloque*/
+
+/*elemento*/
+@import url(./blocks/modal-form/__set/modal-form__set.css);
+/*elemento*/
+
+/*bloque*/
+@import url(./blocks/input/input.css);
+/*bloque*/
+
+/*modificadores*/
+@import url(./blocks/input/_name/input_name.css);
+@import url(./blocks/input/_ocupation/input_ocupation.css);
+@import url(./blocks/input/_name-place/input_name-place.css);
+@import url(./blocks/input/_url/input_url.css);
+@import url(./blocks/input/_error-active/input_error-active.css);
+/*modificadores*/
+
+/*bloque*/
+@import url(./blocks/error/error.css);
+/*bloque*/
+
+/*modificadores*/
+@import url(./blocks/error/_active/error_active.css);
+@import url(./blocks/error/_input-name/error_input-name.css);
+@import url(./blocks/error/_input-ocupation/error_input-ocupation.css);
+@import url(./blocks/error/_input-name-place/error_input-name-place.css);
+@import url(./blocks/error/_input-url/error_input-url.css);
+/*modificadores*/
+
+/*bloque*/
+@import url(./blocks/button/button.css);
+/*bloque*/
+
+/*modificadores*/
+@import url(./blocks/button/_edit/button_edit.css);
+@import url(./blocks/button/_add/button_add.css);
+@import url(./blocks/button/_inactive/button_inactive.css);
+/*modificadores*/
+
+/*bloque*/
+@import url(./blocks/content-pop-up/content-pop-up.css);
+/*bloque*/
+
+/*modificador*/
+@import url(./blocks/content-pop-up/_visibility/_visible/content-pop-up_visibility_visible.css);
+/*modificador*/
+
+/*bloque*/
+@import url(./blocks/pop-up-window/pop-up-window.css);
+/*bloque*/
+
+/*elementos y modificadores*/
+@import url(./blocks/pop-up-window/__button-close/pop-up-window__button-close.css);
+/*elementos y modificadores*/

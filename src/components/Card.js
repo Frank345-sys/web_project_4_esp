@@ -1,12 +1,7 @@
-//const Card = (() => {
+import { PopupWithImage } from "./PopupWithImage.js";
+import { contentPopUp } from "../utils/constants.js";
 
-import { Scroll, popUpWindow, renderUtils } from "./utils.js";
-
-const contentCardList = document.querySelector(".content-photos");
-
-const scroll = new Scroll();
-
-class Card {
+export class Card {
   constructor(name, link, cardSelector) {
     this._title = name;
     this._image = link;
@@ -57,13 +52,6 @@ class Card {
     }
   }
 
-  _popPupImage() {
-    popUpWindow.children[0].children[1].src = this._image;
-    popUpWindow.children[0].children[2].textContent = this._title;
-    popUpWindow.classList.toggle("content-pop-up_visibility_visible");
-    scroll.disableScroll();
-  }
-
   _setEventListeners() {
     this._element
       .querySelector(".card__button-delete")
@@ -77,22 +65,14 @@ class Card {
         this._likeCard();
       });
 
-    this._element
-      .querySelector(".card__photo-item")
-      .addEventListener("click", () => {
-        this._popPupImage();
-      });
+    const PopupImage = new PopupWithImage(
+      contentPopUp,
+      "content-pop-up_visibility_visible",
+      contentPopUp.children[0].children[0],
+      this._element.querySelector(".card__photo-item"),
+      this._image,
+      this._title
+    );
+    PopupImage.setEventListeners();
   }
 }
-
-const renderCards = (initialCards) => {
-  initialCards.forEach((item) => {
-    const card = new Card(item.name, item.link, ".card-template");
-    const cardElement = card.generateCard();
-    contentCardList.append(cardElement);
-  });
-};
-
-//})();
-
-export { Card, contentCardList, renderCards };

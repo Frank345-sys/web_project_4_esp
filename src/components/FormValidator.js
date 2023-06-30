@@ -1,5 +1,4 @@
-//const FormValidator = (() => {
-class FormValidator {
+export class FormValidator {
   constructor(form, formElements) {
     this._form = form;
     this._formElements = formElements;
@@ -68,21 +67,3 @@ class FormValidator {
     });
   }
 }
-
-const renderFormValidator = () => {
-  const formList = Array.from(document.querySelectorAll(".modal-form"));
-
-  formList.forEach((formElement) => {
-    const fieldsetList = Array.from(
-      formElement.querySelectorAll(".modal-form__set")
-    );
-    fieldsetList.forEach((fieldset) => {
-      const form = new FormValidator(formElement, fieldset);
-      form.enableValidation();
-    });
-  });
-};
-
-//})();
-
-export { renderFormValidator };
