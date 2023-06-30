@@ -25,7 +25,6 @@ export class Popup {
     document.addEventListener("keydown", this._closePopupKeyDown);
     this._contentPopup.addEventListener("click", this._closePopupOutsideClick);
     this._closeButtonPopup.addEventListener("click", this._closePopup);
-    console.log("Se agregaron los eventos");
   }
 
   _closePopup() {
@@ -37,7 +36,6 @@ export class Popup {
       this._closePopupOutsideClick
     );
     this._closeButtonPopup.removeEventListener("click", this._closePopup);
-    console.log("Se removieron los eventos");
   }
 
   _closePopupKeyDown(evt) {

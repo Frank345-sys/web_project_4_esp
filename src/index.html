@@ -14,7 +14,10 @@
         <div class="modal modal_edit">
           <h2 class="modal__title">Editar perfil</h2>
           <button type="button" class="modal__button-close">
-            <img alt="icono editar" src="./images/vector_close_icon.png" />
+            <img
+              alt="icono editar"
+              src="<%= require('./images/vector_close_icon.png')%>"
+            />
           </button>
           <form class="modal-form" novalidate>
             <fieldset class="modal-form__set">
@@ -52,7 +55,10 @@
         <div class="modal modal_add">
           <h2 class="modal__title">Nuevo lugar</h2>
           <button type="button" class="modal__button-close">
-            <img alt="icono cerrar" src="./images/vector_close_icon.png" />
+            <img
+              alt="icono cerrar"
+              src="<%= require('./images/vector_close_icon.png')%>"
+            />
           </button>
           <form class="modal-form" novalidate>
             <fieldset class="modal-form__set">
@@ -85,7 +91,10 @@
       <div class="content-pop-up">
         <div class="pop-up-window">
           <button type="button" class="pop-up-window__button-close">
-            <img alt="icono cerrar" src="./images/vector_close_icon.png" />
+            <img
+              alt="icono cerrar"
+              src="<%= require('./images/vector_close_icon.png')%>"
+            />
           </button>
           <img src="." alt="Vista previa imagen card" />
           <h3></h3>
@@ -96,7 +105,7 @@
         <div class="content-header">
           <img
             alt="Logo-header"
-            src="./images/logo/logo.png"
+            src="<%= require('./images/logo/logo.png')%>"
             class="content-header__logo"
           />
         </div>
@@ -107,7 +116,7 @@
             <div class="profile-info">
               <img
                 alt="foto de perfil"
-                src="./images/profile.jpg"
+                src="<%= require('./images/profile.jpg')%>"
                 class="profile-info__image"
               />
               <div class="content-prof-info-text">
@@ -118,14 +127,17 @@
                 >
                   <img
                     alt="icono editar"
-                    src="./images/vector_pencil_icon.png"
+                    src="<%= require('./images/vector_pencil_icon.png')%>"
                   />
                 </button>
                 <h3 class="content-prof-info-text__ocupation">Explorador</h3>
               </div>
             </div>
             <button type="button" class="content-profile__add-button">
-              <img alt="icono agregar" src="./images/vector_add_icon.png" />
+              <img
+                alt="icono agregar"
+                src="<%= require('./images/vector_add_icon.png')%>"
+              />
             </button>
           </div>
         </section>
@@ -266,11 +278,14 @@
     <template class="card-template"
       ><article class="card">
         <button type="button" class="card__button-delete">
-          <img alt="icono borrar" src="./images/vector_delete_icon.png" />
+          <img
+            alt="icono borrar"
+            src="<%= require('./images/vector_delete_icon.png')%>"
+          />
         </button>
         <img
           alt="imagen ilustrativa"
-          src="https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/vanoise.jpg"
+          src="https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/vanoise.jpg')%>"
           class="card__photo-item"
         />
         <div class="content-footer-card">
@@ -278,7 +293,7 @@
           <button type="button" class="heart-button">
             <img
               alt="icono heart"
-              src="./images/vector_heart_icon.png"
+              src="<%= require('./images/vector_heart_icon.png')%>"
               class="heart-button__icon"
             />
           </button>

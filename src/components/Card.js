@@ -1,5 +1,7 @@
 import { PopupWithImage } from "./PopupWithImage.js";
 import { contentPopUp } from "../utils/constants.js";
+import iconHeart from "../images/vector_heart_icon.png";
+import iconHeartLike from "../images/vector_heart_icon_like.png";
 
 export class Card {
   constructor(name, link, cardSelector) {
@@ -40,15 +42,18 @@ export class Card {
 
   _likeCard() {
     this._iconLike = this._element.querySelector(".heart-button__icon");
-    if (
-      this._iconLike.getAttribute("src") === "./images/vector_heart_icon.png"
-    ) {
-      this._iconLike.setAttribute(
+    if (this._iconLike.getAttribute("src") === "466cc973e4cbfcca93d8.png") {
+      this._iconLike.src = iconHeartLike;
+      /*this._iconLike.setAttribute(
         "src",
-        "./images/vector_heart_icon-black.png"
-      );
+        "<%= require('./images/vector_heart_icon.png')%>"
+      );*/
     } else {
-      this._iconLike.setAttribute("src", "./images/vector_heart_icon.png");
+      this._iconLike.src = iconHeart;
+      /*this._iconLike.setAttribute(
+        "src",
+        "<%= require('./images/vector_heart_icon_like.png')%>"
+      );*/
     }
   }
 
