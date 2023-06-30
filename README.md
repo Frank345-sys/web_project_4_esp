@@ -22,30 +22,30 @@ Este proyecto es el resultado de lo aprendido de los sprints: 1, 2 y 3 del bootc
 
 ### Vistas diseño pc
 
-![preview de web pc](/images/captura-pagina-pc-laptop.png)
+![preview de web pc](./src./src/images/captura-pagina-pc-laptop.png)
 
 ### Vistas diseño para tablets
 
-![preview de web tablet](/images/captura-pagina-tablet.png)
+![preview de web tablet](./src/images/captura-pagina-tablet.png)
 
 ### Vistas diseño para dispositivos móviles
 
-![preview de web móvil](/images/captura-pagina-movil.png)
+![preview de web móvil](./src/images/captura-pagina-movil.png)
 
 ## Vistas JavaScrip aplicado
 
 ### Vista pc
 
-![preview de web pc javascript](/images/captura-pantalla-modal-1.png)
-![preview de web pc javascript](/images/captura-pantalla-modal-2.png)
+![preview de web pc javascript](./src/images/captura-pantalla-modal-1.png)
+![preview de web pc javascript](./src/images/captura-pantalla-modal-2.png)
 
 ### Vista tablets
 
-![preview de web tablet javascript](/images/captura-pantalla-modal-3.png)
+![preview de web tablet javascript](./src/images/captura-pantalla-modal-3.png)
 
 ### Vistas dispositivos móviles
 
-![preview de web móvil javascript](/images/captura-pantalla-modal-4.png)
+![preview de web móvil javascript](./src/images/captura-pantalla-modal-4.png)
 
 ## Nota
 
