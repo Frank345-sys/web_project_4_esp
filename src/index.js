@@ -14,7 +14,10 @@ import {
   inputNamePlace,
   inputUrlPlace,
   formList,
+  contentPopUp,
 } from "./utils/constants.js";
+
+import { PopupWithImage } from "./components/PopupWithImage.js";
 
 import { Card } from "./components/Card.js";
 
@@ -40,29 +43,48 @@ const cardList = new Section(
 
 cardList.renderItems();
 
-const PopupFormEdit = new PopupWithFormEdit(
-  contentModal[0],
-  "content-modal_visibility_visible",
-  buttonCloseModal[0],
-  buttonOpenModalEdit,
-  buttonSubmit[0],
-  inputName,
-  inputOcupation,
-  labelName,
-  labelOcupation
-);
-PopupFormEdit.setEventListeners();
+const renderPopUps = () => {
+  const PopupFormEdit = new PopupWithFormEdit(
+    contentModal[0],
+    "content-modal_visibility_visible",
+    buttonCloseModal[0],
+    buttonOpenModalEdit,
+    buttonSubmit[0],
+    inputName,
+    inputOcupation,
+    labelName,
+    labelOcupation
+  );
+  PopupFormEdit.setEventListeners();
 
-const PopupFormAdd = new PopupWithFormAdd(
-  contentModal[1],
-  "content-modal_visibility_visible",
-  buttonCloseModal[1],
-  buttonOpenModalAdd,
-  buttonSubmit[1],
-  inputNamePlace,
-  inputUrlPlace
-);
-PopupFormAdd.setEventListeners();
+  const PopupFormAdd = new PopupWithFormAdd(
+    contentModal[1],
+    "content-modal_visibility_visible",
+    buttonCloseModal[1],
+    buttonOpenModalAdd,
+    buttonSubmit[1],
+    inputNamePlace,
+    inputUrlPlace
+  );
+  PopupFormAdd.setEventListeners();
+
+  const cardImageList = document.querySelectorAll(".card");
+  cardImageList.forEach((element) => {
+    const image = element.querySelector(".card__photo-item");
+    const title = element.querySelector(".content-footer-card__title");
+    const PopupImage = new PopupWithImage(
+      contentPopUp,
+      "content-pop-up_visibility_visible",
+      contentPopUp.children[0].children[0],
+      image,
+      image.getAttribute("src"),
+      title.textContent
+    );
+    PopupImage.setEventListeners();
+  });
+};
+
+renderPopUps();
 
 const renderFormValidator = () => {
   formList.forEach((formElement) => {

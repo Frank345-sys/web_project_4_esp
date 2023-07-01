@@ -1,4 +1,5 @@
 export const contentPopUp = document.querySelector(".content-pop-up");
+export const cardImageList = document.querySelectorAll(".card");
 export const contentCardList = document.querySelector(".content-photos");
 
 export const contentModal = document.querySelectorAll(".content-modal");

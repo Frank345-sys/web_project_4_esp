@@ -1,5 +1,4 @@
-import { PopupWithImage } from "./PopupWithImage.js";
-import { contentPopUp } from "../utils/constants.js";
+const timeInMilliSeconds = 200;
 
 export class Card {
   constructor(name, link, cardSelector) {
@@ -28,25 +27,14 @@ export class Card {
     this._element.querySelector(".content-footer-card__title").textContent =
       this._title;
 
-    const PopupImage = new PopupWithImage(
-      contentPopUp,
-      "content-pop-up_visibility_visible",
-      contentPopUp.children[0].children[0],
-      this._element.querySelector(".card__photo-item"),
-      this._image,
-      this._title
-    );
-    PopupImage.setEventListeners();
-
     return this._element;
   }
 
   _removeCard() {
     this._element.classList.add("card_delete");
-    this._timeInMilliSeconds = 200;
     setTimeout(() => {
       this._element.remove();
-    }, this._timeInMilliSeconds);
+    }, timeInMilliSeconds);
   }
 
   _likeCard() {
