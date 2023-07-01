@@ -1,7 +1,5 @@
 import { PopupWithImage } from "./PopupWithImage.js";
 import { contentPopUp } from "../utils/constants.js";
-import iconHeart from "../images/vector_heart_icon.png";
-import iconHeartLike from "../images/vector_heart_icon_like.png";
 
 export class Card {
   constructor(name, link, cardSelector) {
@@ -30,31 +28,30 @@ export class Card {
     this._element.querySelector(".content-footer-card__title").textContent =
       this._title;
 
+    const PopupImage = new PopupWithImage(
+      contentPopUp,
+      "content-pop-up_visibility_visible",
+      contentPopUp.children[0].children[0],
+      this._element.querySelector(".card__photo-item"),
+      this._image,
+      this._title
+    );
+    PopupImage.setEventListeners();
+
     return this._element;
   }
 
   _removeCard() {
     this._element.classList.add("card_delete");
+    this._timeInMilliSeconds = 200;
     setTimeout(() => {
       this._element.remove();
-    }, 200);
+    }, this._timeInMilliSeconds);
   }
 
   _likeCard() {
     this._iconLike = this._element.querySelector(".heart-button__icon");
-    if (this._iconLike.getAttribute("src") === "466cc973e4cbfcca93d8.png") {
-      this._iconLike.src = iconHeartLike;
-      /*this._iconLike.setAttribute(
-        "src",
-        "<%= require('./images/vector_heart_icon.png')%>"
-      );*/
-    } else {
-      this._iconLike.src = iconHeart;
-      /*this._iconLike.setAttribute(
-        "src",
-        "<%= require('./images/vector_heart_icon_like.png')%>"
-      );*/
-    }
+    this._iconLike.classList.toggle("heart-button__icon_liked");
   }
 
   _setEventListeners() {
@@ -69,15 +66,5 @@ export class Card {
       .addEventListener("click", () => {
         this._likeCard();
       });
-
-    const PopupImage = new PopupWithImage(
-      contentPopUp,
-      "content-pop-up_visibility_visible",
-      contentPopUp.children[0].children[0],
-      this._element.querySelector(".card__photo-item"),
-      this._image,
-      this._title
-    );
-    PopupImage.setEventListeners();
   }
 }
