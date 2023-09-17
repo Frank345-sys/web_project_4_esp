@@ -1,56 +1,73 @@
-import { Scroll } from "../utils/constants.js";
-
-export class Popup {
-  static scroll = new Scroll();
+export class PopUp {
   constructor(
-    contentPopup,
-    contentPopupSelector,
-    closeButtonPopup,
-    openButtonPopup
+    contentPopUp,
+    contentPopUpSelector,
+    closeButtonPopUp,
+    openButtonPopUp
   ) {
-    this._contentPopup = contentPopup;
-    this._contentPopupSelector = contentPopupSelector;
-    this._closeButtonPopup = closeButtonPopup;
-    this._openButtonPopup = openButtonPopup;
+    this._contentPopUp = contentPopUp;
+    this._contentPopUpSelector = contentPopUpSelector;
+    this._closeButtonPopUp = closeButtonPopUp;
+    this._openButtonPopUp = openButtonPopUp;
 
-    this._openPopup = this._openPopup.bind(this);
-    this._closePopup = this._closePopup.bind(this);
-    this._closePopupKeyDown = this._closePopupKeyDown.bind(this);
-    this._closePopupOutsideClick = this._closePopupOutsideClick.bind(this);
+    this._closePopUpKeyDown = this._closePopUpKeyDown.bind(this);
+    this._closePopUpOutsideClick = this._closePopUpOutsideClick.bind(this);
+    this._openPopUp = this._openPopUp.bind(this);
+    this._closePopUp = this._closePopUp.bind(this);
   }
 
-  _openPopup() {
-    this._contentPopup.classList.add(this._contentPopupSelector);
-    Popup.scroll.disableScroll();
-    document.addEventListener("keydown", this._closePopupKeyDown);
-    this._contentPopup.addEventListener("click", this._closePopupOutsideClick);
-    this._closeButtonPopup.addEventListener("click", this._closePopup);
+  _togglePopUp() {
+    this._contentPopUp.classList.toggle(this._contentPopUpSelector);
   }
 
-  _closePopup() {
-    this._contentPopup.classList.remove(this._contentPopupSelector);
-    Popup.scroll.enableScroll();
-    document.removeEventListener("keydown", this._closePopupKeyDown);
-    this._contentPopup.removeEventListener(
+  _enableScroll() {
+    document.body.style.overflow = "auto";
+  }
+
+  _disableScroll() {
+    document.body.style.overflow = "hidden";
+  }
+
+  _addEvents() {
+    document.addEventListener("keydown", this._closePopUpKeyDown);
+    this._contentPopUp.addEventListener("click", this._closePopUpOutsideClick);
+    this._closeButtonPopUp.addEventListener("click", this._closePopUp);
+  }
+
+  _removeEvents() {
+    document.removeEventListener("keydown", this._closePopUpKeyDown);
+    this._contentPopUp.removeEventListener(
       "click",
-      this._closePopupOutsideClick
+      this._closePopUpOutsideClick
     );
-    this._closeButtonPopup.removeEventListener("click", this._closePopup);
+    this._closeButtonPopUp.removeEventListener("click", this._closePopUp);
   }
 
-  _closePopupKeyDown(evt) {
+  _closePopUpKeyDown(evt) {
     if (evt.key === "Escape") {
-      this._closePopup();
+      this._closePopUp();
     }
   }
 
-  _closePopupOutsideClick(evt) {
-    if (evt.target === this._contentPopup) {
-      this._closePopup();
+  _closePopUpOutsideClick(evt) {
+    if (evt.target === this._contentPopUp) {
+      this._closePopUp();
     }
+  }
+
+  _openPopUp() {
+    this._disableScroll();
+    this._togglePopUp();
+    this._addEvents();
+  }
+
+  _closePopUp() {
+    this._enableScroll();
+    this._togglePopUp();
+    this._removeEvents();
   }
 
   setEventListeners() {
-    this._openButtonPopup.addEventListener("click", this._openPopup);
+    this._openButtonPopUp.addEventListener("click", this._openPopUp);
   }
 }

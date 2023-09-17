@@ -1,87 +1,149 @@
 import "./styles/index.css";
 import {
-  initialCards,
   contentCardList,
-  contentModal,
-  buttonCloseModal,
+  formList,
+  contentPopUpEdit,
+  contentPopUpAdd,
+  contentPopUpEditPhoto,
+  buttonCloseModalEdit,
+  buttonCloseModalAdd,
+  buttonCloseModalEditPhoto,
   buttonOpenModalEdit,
   buttonOpenModalAdd,
-  buttonSubmit,
+  buttonOpenModalEditPhoto,
+  buttonSubmitEdit,
+  buttonSubmitAdd,
+  buttonSubmitEditPhoto,
   inputName,
   inputOcupation,
+  profileImage,
   labelName,
   labelOcupation,
   inputNamePlace,
   inputUrlPlace,
-  formList,
-  contentPopUp,
+  inputUrlEdit,
+  photoEdit,
 } from "./utils/constants.js";
-
-import { PopupWithImage } from "./components/PopupWithImage.js";
 
 import { Card } from "./components/Card.js";
 
-import { PopupWithFormEdit } from "./components/PopupWithFormEdit.js";
+import { PopUpWithFormAdd } from "./components/PopUpWithFormAdd.js";
 
-import { PopupWithFormAdd } from "./components/PopupWithFormAdd.js";
+import { PopUpWithFormEdit } from "./components/PopUpWithFormEdit.js";
+
+import { PopUpWithPhotoEdit } from "./components/PopUpWithPhotoEdit.js";
 
 import { FormValidator } from "./components/FormValidator.js";
 
 import { Section } from "./components/Section.js";
 
-const cardList = new Section(
-  {
-    data: initialCards,
-    renderer: (item) => {
-      const card = new Card(item.name, item.link, ".card-template");
-      const cardElement = card.generateCard();
-      cardList.addItem(cardElement);
-    },
-  },
-  contentCardList
-);
+import { Api } from "./components/Api.js";
 
-cardList.renderItems();
+const getCards = new Api({
+  baseUrl: "cards",
+  method: "GET",
+  body: null,
+  headers: {
+    authorization: "28d1f77b-3605-449f-bf16-20a5216f8fdb",
+    "Content-Type": "application/json",
+  },
+});
+
+getCards
+  .card()
+  .then((result) => {
+    console.log("Lista de cards: " + result);
+    const cardList = new Section(
+      {
+        data: result,
+        renderer: (item) => {
+          const card = new Card(
+            item.name,
+            item.link,
+            item._id,
+            item.likes,
+            item.owner,
+            ".card-template"
+          );
+          const cardElement = card.generateCard();
+          cardList.addItem(cardElement);
+        },
+      },
+      contentCardList
+    );
+
+    cardList.renderItems();
+  })
+  .catch((err) => {
+    console.log(err);
+  })
+  .finally(() => {
+    contentCardList.classList.remove("shimmer");
+  });
+
+const getInformationProfile = new Api({
+  baseUrl: "users/me",
+  method: "GET",
+  body: null,
+  headers: {
+    authorization: "28d1f77b-3605-449f-bf16-20a5216f8fdb",
+    "Content-Type": "application/json",
+  },
+});
+
+getInformationProfile
+  .profile()
+  .then((result) => {
+    console.log(result);
+    photoEdit.src = result.avatar;
+    labelName.textContent = result.name;
+    labelOcupation.textContent = result.about;
+  })
+  .catch((err) => {
+    console.log(err);
+  })
+  .finally(() => {
+    photoEdit.style.zIndex = "0";
+    profileImage.classList.remove("shimmer");
+    labelName.classList.remove("shimmer");
+    labelOcupation.classList.remove("shimmer");
+  });
 
 const renderPopUps = () => {
-  const PopupFormEdit = new PopupWithFormEdit(
-    contentModal[0],
+  const PopUpFormEdit = new PopUpWithFormEdit(
+    contentPopUpEdit,
     "content-modal_visibility_visible",
-    buttonCloseModal[0],
+    buttonCloseModalEdit,
     buttonOpenModalEdit,
-    buttonSubmit[0],
+    buttonSubmitEdit,
     inputName,
     inputOcupation,
     labelName,
     labelOcupation
   );
-  PopupFormEdit.setEventListeners();
+  PopUpFormEdit.setEventListeners();
 
-  const PopupFormAdd = new PopupWithFormAdd(
-    contentModal[1],
+  const PopUpFormAdd = new PopUpWithFormAdd(
+    contentPopUpAdd,
     "content-modal_visibility_visible",
-    buttonCloseModal[1],
+    buttonCloseModalAdd,
     buttonOpenModalAdd,
-    buttonSubmit[1],
+    buttonSubmitAdd,
     inputNamePlace,
     inputUrlPlace
   );
-  PopupFormAdd.setEventListeners();
+  PopUpFormAdd.setEventListeners();
 
-  const cardImageList = document.querySelectorAll(".card");
-  cardImageList.forEach((element) => {
-    const image = element.querySelector(".card__photo-item");
-    const title = element.querySelector(".content-footer-card__title");
-    const PopupImage = new PopupWithImage(
-      contentPopUp,
-      "content-pop-up_visibility_visible",
-      contentPopUp.children[0].children[0],
-      image,
-      image.getAttribute("src"),
-      title.textContent
-    );
-    PopupImage.setEventListeners();
-  });
+  const PopUpPhotoEdit = new PopUpWithPhotoEdit(
+    contentPopUpEditPhoto,
+    "content-modal_visibility_visible",
+    buttonCloseModalEditPhoto,
+    buttonOpenModalEditPhoto,
+    buttonSubmitEditPhoto,
+    inputUrlEdit,
+    photoEdit
+  );
+  PopUpPhotoEdit.setEventListeners();
 };
 
 renderPopUps();

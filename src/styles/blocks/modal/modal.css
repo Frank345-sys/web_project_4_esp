@@ -1,5 +1,5 @@
 .modal {
-  height: 100%;
+  height: fit-content;
   max-height: 330px;
   width: 100%;
   max-width: 430px;

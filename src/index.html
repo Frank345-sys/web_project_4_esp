@@ -13,7 +13,10 @@
       <div class="content-modal content-modal_edit">
         <div class="modal modal_edit">
           <h2 class="modal__title">Editar perfil</h2>
-          <button type="button" class="modal__button-close">
+          <button
+            type="button"
+            class="modal__button-close modal__button-close_edit"
+          >
             <img
               alt="icono editar"
               src="<%= require('./images/vector_close_icon.png')%>"
@@ -54,7 +57,10 @@
       <div class="content-modal content-modal_add">
         <div class="modal modal_add">
           <h2 class="modal__title">Nuevo lugar</h2>
-          <button type="button" class="modal__button-close">
+          <button
+            type="button"
+            class="modal__button-close modal__button-close_add"
+          >
             <img
               alt="icono cerrar"
               src="<%= require('./images/vector_close_icon.png')%>"
@@ -88,7 +94,60 @@
         </div>
       </div>
 
-      <div class="content-pop-up">
+      <div class="content-modal content-modal_edit-photo">
+        <div class="modal modal_edit-photo">
+          <h2 class="modal__title">Cambiar foto de perfil</h2>
+          <button
+            type="button"
+            class="modal__button-close modal__button-close_edit-photo"
+          >
+            <img
+              alt="icono cerrar"
+              src="<%= require('./images/vector_close_icon.png')%>"
+            />
+          </button>
+          <form class="modal-form" novalidate>
+            <fieldset class="modal-form__set">
+              <input
+                class="input input_url-edit"
+                id="input-url-edit"
+                type="url"
+                name="url"
+                placeholder="Ingrese la URL de la foto"
+                required
+              />
+              <span class="error error_input-url-edit"></span>
+              <button class="button button_edit-photo" type="submit">
+                Guardar
+              </button>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+
+      <div class="content-modal content-modal_delete-card">
+        <div class="modal modal_delete-card">
+          <h2 class="modal__title">¿Estás segudo/a?</h2>
+          <button
+            type="button"
+            class="modal__button-close modal__button-close_delete-card"
+          >
+            <img
+              alt="icono cerrar"
+              src="<%= require('./images/vector_close_icon.png')%>"
+            />
+          </button>
+          <form class="modal-form" novalidate>
+            <fieldset class="modal-form__set">
+              <button class="button button_delete-card" type="submit">
+                Elimiar
+              </button>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+
+      <div class="content-pop-up content-pop-up_image">
         <div class="pop-up-window">
           <button type="button" class="pop-up-window__button-close">
             <img
@@ -114,13 +173,21 @@
         <section class="profile">
           <div class="content-profile">
             <div class="profile-info">
-              <img
-                alt="foto de perfil"
-                src="<%= require('./images/profile.jpg')%>"
-                class="profile-info__image"
-              />
+              <div class="profile-image shimmer">
+                <img
+                  alt="foto de perfil"
+                  src="<%= require('./images/profile.jpg')%>"
+                  class="profile-image__image"
+                />
+                <div class="profile-image__edit-icon">
+                  <img
+                    src="<%= require('./images/editar.png')%>"
+                    alt="Editar"
+                  />
+                </div>
+              </div>
               <div class="content-prof-info-text">
-                <h2 class="content-prof-info-text__name">Jacques Cousteau</h2>
+                <h2 class="content-prof-info-text__name shimmer"></h2>
                 <button
                   type="button"
                   class="content-prof-info-text__edit-button"
@@ -130,7 +197,7 @@
                     src="<%= require('./images/vector_pencil_icon.png')%>"
                   />
                 </button>
-                <h3 class="content-prof-info-text__ocupation">Explorador</h3>
+                <h3 class="content-prof-info-text__ocupation shimmer"></h3>
               </div>
             </div>
             <button type="button" class="content-profile__add-button">
@@ -143,7 +210,7 @@
         </section>
 
         <section class="photos-grid">
-          <div class="content-photos">
+          <div class="content-photos shimmer">
             <!--
             <article class="card">
               <button type="button" class="card__button-delete">
@@ -293,9 +360,9 @@
           <button type="button" class="heart-button">
             <span class="heart-button__icon">❤️</span>
           </button>
-        </div>
-      </article></template
-    >
+          <span class="content-footer-card__likes"></span>
+        </div></article
+    ></template>
     <!--
     <script type="module" src="./index.js"></script>
     <script type="module" src="./utils/constants.js"></script>

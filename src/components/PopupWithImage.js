@@ -1,43 +1,25 @@
-import { Popup } from "./Popup.js";
+import { PopUp } from "./PopUp.js";
 
-export class PopupWithImage extends Popup {
+export class PopUpWithImage extends PopUp {
   constructor(
-    contentPopup,
-    contentPopupSelector,
-    closeButtonPopup,
-    openButtonPopup,
+    contentPopUp,
+    contentPopUpSelector,
+    closeButtonPopUp,
     src,
     textContent
   ) {
-    super(
-      contentPopup,
-      contentPopupSelector,
-      closeButtonPopup,
-      openButtonPopup
-    );
+    super(contentPopUp, contentPopUpSelector, closeButtonPopUp);
     this._src = src;
     this._textContent = textContent;
   }
 
-  _openPopup() {
-    super._openPopup();
-    this._contentPopup.children[0].children[1].src = this._src;
-    this._contentPopup.children[0].children[2].textContent = this._textContent;
-  }
-
-  _closePopup() {
-    super._closePopup();
-  }
-
-  _closePopupKeyDown(evt) {
-    super._closePopupKeyDown(evt);
-  }
-
-  _closePopupOutsideClick(evt) {
-    super._closePopupOutsideClick(evt);
+  _addEvents() {
+    super._addEvents();
+    this._contentPopUp.children[0].children[1].src = this._src;
+    this._contentPopUp.children[0].children[2].textContent = this._textContent;
   }
 
   setEventListeners() {
-    super.setEventListeners();
+    this._openPopUp();
   }
 }

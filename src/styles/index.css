@@ -3,6 +3,10 @@
 @import url(./blocks/root/root.css);
 
 /*bloque*/
+@import url(./blocks/shimmer/shimmer.css);
+/*bloque*/
+
+/*bloque*/
 @import url(./blocks/header/header.css);
 /*bloque*/
 
@@ -26,8 +30,13 @@
 @import url(./blocks/profile-info/profile-info.css);
 /*bloque*/
 
+/*bloque*/
+@import url(./blocks/profile-image/profile-image.css);
+/*bloque*/
+
 /*elementos*/
-@import url(./blocks/profile-info/__image/profile-info__image.css);
+@import url(./blocks/profile-image/__image/profile-image__image.css);
+@import url(./blocks/profile-image/__edit-icon/profile-image__edit-icon.css);
 /*elementos*/
 
 /*bloque*/
@@ -64,6 +73,7 @@
 
 /*elementos*/
 @import url(./blocks/content-footer-card/__title/content-footer-card__title.css);
+@import url(./blocks/content-footer-card/__likes/content-footer-card__likes.css);
 /*elementos*/
 
 /*bloque*/
@@ -96,6 +106,10 @@
 @import url(./blocks/modal/_add/modal_add.css);
 @import url(./blocks/modal/__title/modal__title.css);
 @import url(./blocks/modal/__button-close/modal__button-close.css);
+@import url(./blocks/modal/__button-close/_add/modal__button-close_add.css);
+@import url(./blocks/modal/__button-close/_edit/modal__button-close_edit.css);
+@import url(./blocks/modal/__button-close/_edit-photo/modal__button-close_edit-photo.css);
+@import url(./blocks/modal/__button-close/_delete-card/modal__button-close_delete-card.css);
 /*elementos y modificadores*/
 
 /*bloque*/
@@ -123,6 +137,7 @@
 @import url(./blocks/input/_ocupation/input_ocupation.css);
 @import url(./blocks/input/_name-place/input_name-place.css);
 @import url(./blocks/input/_url/input_url.css);
+@import url(./blocks/input/_url-edit/input_url-edit.css);
 @import url(./blocks/input/_error-active/input_error-active.css);
 /*modificadores*/
 
@@ -136,6 +151,7 @@
 @import url(./blocks/error/_input-ocupation/error_input-ocupation.css);
 @import url(./blocks/error/_input-name-place/error_input-name-place.css);
 @import url(./blocks/error/_input-url/error_input-url.css);
+@import url(./blocks/error/_input-url-edit/error_input-url-edit.css);
 /*modificadores*/
 
 /*bloque*/
@@ -145,6 +161,8 @@
 /*modificadores*/
 @import url(./blocks/button/_edit/button_edit.css);
 @import url(./blocks/button/_add/button_add.css);
+@import url(./blocks/button/_delete-card/button_delete-card.css);
+@import url(./blocks/button/_edit-photo/button_edit-photo.css);
 @import url(./blocks/button/_inactive/button_inactive.css);
 /*modificadores*/
 

@@ -9,3 +9,7 @@
   opacity: 1;
   transition: all 0.3s;
 }
+
+.card:hover {
+  transform: scale(1.03);
+}

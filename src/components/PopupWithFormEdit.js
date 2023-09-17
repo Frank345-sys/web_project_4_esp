@@ -1,59 +1,79 @@
-import { Popup } from "./Popup.js";
+import { PopUp } from "./PopUp.js";
+import { Api } from "../components/Api.js";
 
-export class PopupWithFormEdit extends Popup {
+export class PopUpWithFormEdit extends PopUp {
   constructor(
-    contentPopup,
-    contentPopupSelector,
-    closeButtonPopup,
-    openButtonPopup,
-    submitButtonPopup,
-    firstInputPopup,
-    secondInputPopup,
-    firstLabelPopup,
-    secondLabelPopup
+    contentPopUp,
+    contentPopUpSelector,
+    closeButtonPopUp,
+    openButtonPopUp,
+    submitButtonPopUp,
+    firstInputPopUp,
+    secondInputPopUp,
+    firstLabelPopUp,
+    secondLabelPopUp
   ) {
     super(
-      contentPopup,
-      contentPopupSelector,
-      closeButtonPopup,
-      openButtonPopup
+      contentPopUp,
+      contentPopUpSelector,
+      closeButtonPopUp,
+      openButtonPopUp
     );
-    this._submitButtonPopup = submitButtonPopup;
-    this._firstInputPopup = firstInputPopup;
-    this._secondInputPopup = secondInputPopup;
-    this._firstLabelPopup = firstLabelPopup;
-    this._secondLabelPopup = secondLabelPopup;
+    this._submitButtonPopUp = submitButtonPopUp;
+    this._firstInputPopUp = firstInputPopUp;
+    this._secondInputPopUp = secondInputPopUp;
+    this._firstLabelPopUp = firstLabelPopUp;
+    this._secondLabelPopUp = secondLabelPopUp;
 
-    this._submitPopup = this._submitPopup.bind(this);
+    this._submitPopUp = this._submitPopUp.bind(this);
   }
 
-  _openPopup() {
-    super._openPopup();
-    this._firstInputPopup.value = this._firstLabelPopup.textContent;
-    this._secondInputPopup.value = this._secondLabelPopup.textContent;
-    this._submitButtonPopup.addEventListener("click", this._submitPopup);
+  _addEvents() {
+    super._addEvents();
+    this._firstInputPopUp.value = this._firstLabelPopUp.textContent;
+    this._secondInputPopUp.value = this._secondLabelPopUp.textContent;
+    this._submitButtonPopUp.addEventListener("click", this._submitPopUp);
   }
 
-  _closePopup() {
-    super._closePopup();
-    this._submitButtonPopup.removeEventListener("click", this._submitPopup);
+  _removeEvents() {
+    super._removeEvents();
+    this._submitButtonPopUp.removeEventListener("click", this._submitPopUp);
   }
 
-  _closePopupKeyDown(evt) {
-    super._closePopupKeyDown(evt);
-  }
+  _submitPopUp() {
+    //Jacques Cousteau
+    //Sailor, researcher
 
-  _closePopupOutsideClick(evt) {
-    super._closePopupOutsideClick(evt);
-  }
+    this._submitButtonPopUp.textContent = "Editando...";
 
-  _submitPopup() {
-    this._firstLabelPopup.textContent = this._firstInputPopup.value;
-    this._secondLabelPopup.textContent = this._secondInputPopup.value;
-    this._closePopup();
-  }
+    const editPhotoProfile = new Api({
+      baseUrl: `users/me`,
+      method: "PATCH",
+      body: JSON.stringify({
+        name: this._firstInputPopUp.value,
+        about: this._secondInputPopUp.value,
+      }),
+      headers: {
+        authorization: "28d1f77b-3605-449f-bf16-20a5216f8fdb",
+        "Content-Type": "application/json",
+      },
+    });
 
-  setEventListeners() {
-    super.setEventListeners();
+    editPhotoProfile
+      .profile()
+      .then((result) => {
+        console.log("Resultado del perfil con los nuevos datos: " + result);
+        this._firstLabelPopUp.textContent = result.name;
+        this._secondLabelPopUp.textContent = result.about;
+      })
+      .catch((err) => {
+        this._closePopUp();
+        console.log(err);
+      })
+      .finally(() => {
+        this._closePopUp();
+        this._submitButtonPopUp.textContent = "Guardar";
+        console.log("Se editó la información del perfil con exito");
+      });
   }
 }

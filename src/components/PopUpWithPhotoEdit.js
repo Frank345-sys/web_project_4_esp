@@ -1,9 +1,7 @@
 import { PopUp } from "./PopUp.js";
-import { Card } from "./Card.js";
-import { contentCardList } from "../utils/constants.js";
 import { Api } from "../components/Api.js";
 
-export class PopUpWithFormAdd extends PopUp {
+export class PopUpWithPhotoEdit extends PopUp {
   constructor(
     contentPopUp,
     contentPopUpSelector,
@@ -11,7 +9,7 @@ export class PopUpWithFormAdd extends PopUp {
     openButtonPopUp,
     submitButtonPopUp,
     firstInputPopUp,
-    secondInputPopUp
+    photoEdit
   ) {
     super(
       contentPopUp,
@@ -21,7 +19,7 @@ export class PopUpWithFormAdd extends PopUp {
     );
     this._submitButtonPopUp = submitButtonPopUp;
     this._firstInputPopUp = firstInputPopUp;
-    this._secondInputPopUp = secondInputPopUp;
+    this._photoEdit = photoEdit;
 
     this._submitPopUp = this._submitPopUp.bind(this);
   }
@@ -37,44 +35,38 @@ export class PopUpWithFormAdd extends PopUp {
   }
 
   _submitPopUp() {
-    this._createCard();
-  }
+    //https://pictures.s3.yandex.net/frontend-developer/common/ava.jpg
 
-  _createCard() {
-    this._submitButtonPopUp.textContent = "Creando...";
-    const createCard = new Api({
-      baseUrl: "cards",
-      method: "POST",
+    this._submitButtonPopUp.textContent = "Editando...";
+
+    const editPhotoProfile = new Api({
+      baseUrl: `users/me/avatar`,
+      method: "PATCH",
       body: JSON.stringify({
-        name: this._firstInputPopUp.value,
-        link: this._secondInputPopUp.value,
+        avatar: this._firstInputPopUp.value,
       }),
       headers: {
         authorization: "28d1f77b-3605-449f-bf16-20a5216f8fdb",
         "Content-Type": "application/json",
       },
     });
-    createCard
-      .card()
+
+    editPhotoProfile
+      .profile()
       .then((result) => {
-        const newCard = new Card(
-          result.name,
-          result.link,
-          result._id,
-          result.likes,
-          result.owner,
-          ".card-template"
+        console.log(
+          "Resultado de cambio de foto de perfil actualizado: " + result
         );
-        const newCardElement = newCard.generateCard();
-        contentCardList.prepend(newCardElement);
+        this._photoEdit.src = result.avatar;
       })
       .catch((err) => {
         this._closePopUp();
         console.log(err);
       })
-      .finally((result) => {
+      .finally(() => {
         this._closePopUp();
-        this._submitButtonPopUp.textContent = "Crear";
+        this._submitButtonPopUp.textContent = "Guardar";
+        console.log("Se editó la foto de perfil con exito");
       });
   }
 }

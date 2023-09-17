@@ -7,7 +7,15 @@
   grid-template-rows: repeat(2, 1fr);
   transition: all 0.2s;
   grid-gap: 16px;
+  border-radius: 10px;
 }
+
+/*
+.content-photos:hover > :not(:hover) {
+  opacity: 0.4;
+  filter: blur(5px);
+}
+*/
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .content-photos {
