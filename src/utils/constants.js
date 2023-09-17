@@ -99,19 +99,3 @@ export const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg",
   },
 ];
-
-export const initialForms = [];
-
-export class Scroll {
-  disableScroll() {
-    let x = window.scrollX;
-    let y = window.scrollY;
-    window.onscroll = function () {
-      window.scrollTo(x, y);
-    };
-  }
-
-  enableScroll() {
-    window.onscroll = null;
-  }
-}
