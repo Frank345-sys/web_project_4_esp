@@ -116,9 +116,13 @@
 @import url(./blocks/content-modal/content-modal.css);
 /*bloque*/
 
-/*modificador*/
+/*modificadores*/
+@import url(./blocks/content-modal/_add/content-modal_add.css);
+@import url(./blocks/content-modal/_edit-photo/content-modal_edit-photo.css);
+@import url(./blocks/content-modal/_delete-card/content-modal_delete-card.css);
+@import url(./blocks/content-modal/_edit/content-modal_edit.css);
 @import url(./blocks/content-modal/_visibility/_visible/content-modal_visibility_visible.css);
-/*modificador*/
+/*modificadores*/
 
 /*bloque*/
 @import url(./blocks/modal-form/modal-form.css);
@@ -170,9 +174,10 @@
 @import url(./blocks/content-pop-up/content-pop-up.css);
 /*bloque*/
 
-/*modificador*/
+/*modificadores*/
+@import url(./blocks/content-pop-up/_image/content-pop-up_image.css);
 @import url(./blocks/content-pop-up/_visibility/_visible/content-pop-up_visibility_visible.css);
-/*modificador*/
+/*modificadores*/
 
 /*bloque*/
 @import url(./blocks/pop-up-window/pop-up-window.css);
