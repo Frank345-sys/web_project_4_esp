@@ -18,7 +18,7 @@ export class Api {
       if (res.ok) {
         return res.json();
       }
-      return Promise.reject(`Error al crear tarjeta: ${res.status}`);
+      return Promise.reject(`Error: ${res.status}`);
     });
   }
 
@@ -34,7 +34,7 @@ export class Api {
       if (res.ok) {
         return res.json();
       }
-      return Promise.reject(`Error al actualizar perfil: ${res.status}`);
+      return Promise.reject(`Error: ${res.status}`);
     });
   }
 }

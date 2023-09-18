@@ -60,8 +60,6 @@ export class Card {
     return this._element;
   }
 
-  _createCards() {}
-
   _setEventListeners() {
     this._cardPhotoItem.addEventListener("click", () => {
       const popupImage = new PopUpWithImage(
