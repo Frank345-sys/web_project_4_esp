@@ -52,7 +52,7 @@ const getCards = new Api({
 getCards
   .card()
   .then((result) => {
-    console.log("Lista de cards: " + result);
+    console.log(result);
     const cardList = new Section(
       {
         data: result,
