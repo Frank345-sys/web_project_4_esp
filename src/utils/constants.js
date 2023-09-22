@@ -1,16 +1,24 @@
-export const contentPopUpEdit = document.querySelector(".content-modal_edit");
+import { Api } from "../components/Api.js";
 
-export const contentPopUpAdd = document.querySelector(".content-modal_add");
+export const formEdit = document.querySelector(".modal-form_edit");
 
-export const contentPopUpEditPhoto = document.querySelector(
+export const formAdd = document.querySelector(".modal-form_add");
+
+export const formEditPhoto = document.querySelector(".modal-form_edit-photo");
+
+export const contentPopupEdit = document.querySelector(".content-modal_edit");
+
+export const contentPopupAdd = document.querySelector(".content-modal_add");
+
+export const contentPopupEditPhoto = document.querySelector(
   ".content-modal_edit-photo"
 );
 
-export const contentPopUpDeleteCard = document.querySelector(
+export const contentPopupDeleteCard = document.querySelector(
   ".content-modal_delete-card"
 );
 
-export const contentPopUpImage = document.querySelector(
+export const contentPopupImage = document.querySelector(
   ".content-pop-up_image"
 );
 
@@ -99,3 +107,13 @@ export const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg",
   },
 ];
+
+export const getCards = new Api({
+  baseUrl: "cards",
+  method: "GET",
+  body: null,
+  headers: {
+    authorization: "28d1f77b-3605-449f-bf16-20a5216f8fdb",
+    "Content-Type": "application/json",
+  },
+});

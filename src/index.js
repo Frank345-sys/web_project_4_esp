@@ -2,9 +2,9 @@ import "./styles/index.css";
 import {
   contentCardList,
   formList,
-  contentPopUpEdit,
-  contentPopUpAdd,
-  contentPopUpEditPhoto,
+  contentPopupEdit,
+  contentPopupAdd,
+  contentPopupEditPhoto,
   buttonCloseModalEdit,
   buttonCloseModalAdd,
   buttonCloseModalEditPhoto,
@@ -16,43 +16,33 @@ import {
   buttonSubmitEditPhoto,
   inputName,
   inputOcupation,
-  profileImage,
   labelName,
   labelOcupation,
   inputNamePlace,
   inputUrlPlace,
   inputUrlEdit,
+  profileImage,
   photoEdit,
+  getCards,
 } from "./utils/constants.js";
 
 import { Card } from "./components/Card.js";
 
-import { PopUpWithFormAdd } from "./components/PopUpWithFormAdd.js";
+import { PopupWithFormAdd } from "./components/PopupWithFormAdd.js";
 
-import { PopUpWithFormEdit } from "./components/PopUpWithFormEdit.js";
+import { PopupWithFormEdit } from "./components/PopupWithFormEdit.js";
 
-import { PopUpWithPhotoEdit } from "./components/PopUpWithPhotoEdit.js";
+import { PopupWithFormPhotoEdit } from "./components/PopupWithFormPhotoEdit.js";
 
 import { FormValidator } from "./components/FormValidator.js";
 
 import { Section } from "./components/Section.js";
 
-import { Api } from "./components/Api.js";
-
-const getCards = new Api({
-  baseUrl: "cards",
-  method: "GET",
-  body: null,
-  headers: {
-    authorization: "28d1f77b-3605-449f-bf16-20a5216f8fdb",
-    "Content-Type": "application/json",
-  },
-});
+import { UserInfo } from "./components/UserInfo.js";
 
 getCards
   .card()
   .then((result) => {
-    console.log(result);
     const cardList = new Section(
       {
         data: result,
@@ -81,26 +71,18 @@ getCards
     contentCardList.classList.remove("shimmer");
   });
 
-const getInformationProfile = new Api({
-  baseUrl: "users/me",
-  method: "GET",
-  body: null,
-  headers: {
-    authorization: "28d1f77b-3605-449f-bf16-20a5216f8fdb",
-    "Content-Type": "application/json",
-  },
-});
+const getUserInfo = new UserInfo();
 
-getInformationProfile
-  .profile()
+// Obtener información del usuario
+getUserInfo
+  .getUserInfo()
   .then((result) => {
-    console.log(result);
     photoEdit.src = result.avatar;
     labelName.textContent = result.name;
     labelOcupation.textContent = result.about;
   })
-  .catch((err) => {
-    console.log(err);
+  .catch((error) => {
+    console.error(error);
   })
   .finally(() => {
     photoEdit.style.zIndex = "0";
@@ -109,22 +91,23 @@ getInformationProfile
     labelOcupation.classList.remove("shimmer");
   });
 
-const renderPopUps = () => {
-  const PopUpFormEdit = new PopUpWithFormEdit(
-    contentPopUpEdit,
+const renderPopups = () => {
+  const PopupFormEdit = new PopupWithFormEdit(
+    contentPopupEdit,
     "content-modal_visibility_visible",
     buttonCloseModalEdit,
     buttonOpenModalEdit,
     buttonSubmitEdit,
     inputName,
     inputOcupation,
+
     labelName,
     labelOcupation
   );
-  PopUpFormEdit.setEventListeners();
+  PopupFormEdit.setEventListeners();
 
-  const PopUpFormAdd = new PopUpWithFormAdd(
-    contentPopUpAdd,
+  const PopupFormAdd = new PopupWithFormAdd(
+    contentPopupAdd,
     "content-modal_visibility_visible",
     buttonCloseModalAdd,
     buttonOpenModalAdd,
@@ -132,10 +115,10 @@ const renderPopUps = () => {
     inputNamePlace,
     inputUrlPlace
   );
-  PopUpFormAdd.setEventListeners();
+  PopupFormAdd.setEventListeners();
 
-  const PopUpPhotoEdit = new PopUpWithPhotoEdit(
-    contentPopUpEditPhoto,
+  const PopupFormPhotoEdit = new PopupWithFormPhotoEdit(
+    contentPopupEditPhoto,
     "content-modal_visibility_visible",
     buttonCloseModalEditPhoto,
     buttonOpenModalEditPhoto,
@@ -143,10 +126,10 @@ const renderPopUps = () => {
     inputUrlEdit,
     photoEdit
   );
-  PopUpPhotoEdit.setEventListeners();
+  PopupFormPhotoEdit.setEventListeners();
 };
 
-renderPopUps();
+renderPopups();
 
 const renderFormValidator = () => {
   formList.forEach((formElement) => {

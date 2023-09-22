@@ -1,23 +1,23 @@
-export class PopUp {
+export class Popup {
   constructor(
-    contentPopUp,
-    contentPopUpSelector,
-    closeButtonPopUp,
-    openButtonPopUp
+    contentPopup,
+    contentPopupSelector,
+    closeButtonPopup,
+    openButtonPopup
   ) {
-    this._contentPopUp = contentPopUp;
-    this._contentPopUpSelector = contentPopUpSelector;
-    this._closeButtonPopUp = closeButtonPopUp;
-    this._openButtonPopUp = openButtonPopUp;
+    this._contentPopup = contentPopup;
+    this._contentPopupSelector = contentPopupSelector;
+    this._closeButtonPopup = closeButtonPopup;
+    this._openButtonPopup = openButtonPopup;
 
-    this._closePopUpKeyDown = this._closePopUpKeyDown.bind(this);
-    this._closePopUpOutsideClick = this._closePopUpOutsideClick.bind(this);
-    this._openPopUp = this._openPopUp.bind(this);
-    this._closePopUp = this._closePopUp.bind(this);
+    this._closePopupKeyDown = this._closePopupKeyDown.bind(this);
+    this._closePopupOutsideClick = this._closePopupOutsideClick.bind(this);
+    this._openPopup = this._openPopup.bind(this);
+    this._closePopup = this._closePopup.bind(this);
   }
 
-  _togglePopUp() {
-    this._contentPopUp.classList.toggle(this._contentPopUpSelector);
+  _togglePopup() {
+    this._contentPopup.classList.toggle(this._contentPopupSelector);
   }
 
   _enableScroll() {
@@ -29,45 +29,45 @@ export class PopUp {
   }
 
   _addEvents() {
-    document.addEventListener("keydown", this._closePopUpKeyDown);
-    this._contentPopUp.addEventListener("click", this._closePopUpOutsideClick);
-    this._closeButtonPopUp.addEventListener("click", this._closePopUp);
+    document.addEventListener("keydown", this._closePopupKeyDown);
+    this._contentPopup.addEventListener("click", this._closePopupOutsideClick);
+    this._closeButtonPopup.addEventListener("click", this._closePopup);
   }
 
   _removeEvents() {
-    document.removeEventListener("keydown", this._closePopUpKeyDown);
-    this._contentPopUp.removeEventListener(
+    document.removeEventListener("keydown", this._closePopupKeyDown);
+    this._contentPopup.removeEventListener(
       "click",
-      this._closePopUpOutsideClick
+      this._closePopupOutsideClick
     );
-    this._closeButtonPopUp.removeEventListener("click", this._closePopUp);
+    this._closeButtonPopup.removeEventListener("click", this._closePopup);
   }
 
-  _closePopUpKeyDown(evt) {
+  _closePopupKeyDown(evt) {
     if (evt.key === "Escape") {
-      this._closePopUp();
+      this._closePopup();
     }
   }
 
-  _closePopUpOutsideClick(evt) {
-    if (evt.target === this._contentPopUp) {
-      this._closePopUp();
+  _closePopupOutsideClick(evt) {
+    if (evt.target === this._contentPopup) {
+      this._closePopup();
     }
   }
 
-  _openPopUp() {
+  _openPopup() {
     this._disableScroll();
-    this._togglePopUp();
+    this._togglePopup();
     this._addEvents();
   }
 
-  _closePopUp() {
+  _closePopup() {
     this._enableScroll();
-    this._togglePopUp();
+    this._togglePopup();
     this._removeEvents();
   }
 
   setEventListeners() {
-    this._openButtonPopUp.addEventListener("click", this._openPopUp);
+    this._openButtonPopup.addEventListener("click", this._openPopup);
   }
 }

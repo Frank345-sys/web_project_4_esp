@@ -128,9 +128,12 @@
 @import url(./blocks/modal-form/modal-form.css);
 /*bloque*/
 
-/*elemento*/
+/*elementos y bloques*/
 @import url(./blocks/modal-form/__set/modal-form__set.css);
-/*elemento*/
+@import url(./blocks/modal-form/_add/modal-form_add.css);
+@import url(./blocks/modal-form/_edit/modal-form_edit.css);
+@import url(./blocks/modal-form/_edit-photo/modal-form_edit-photo.css);
+/*elementos y bloques*/
 
 /*bloque*/
 @import url(./blocks/input/input.css);

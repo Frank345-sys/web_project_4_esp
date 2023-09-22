@@ -1,6 +1,6 @@
 import {
-  contentPopUpImage,
-  contentPopUpDeleteCard,
+  contentPopupImage,
+  contentPopupDeleteCard,
   buttonCloseModalImage,
   buttonCloseModalDeleteCard,
   buttonSubmitDeleteCard,
@@ -8,9 +8,9 @@ import {
 
 import { Api } from "../components/Api.js";
 
-import { PopUpWithImage } from "../components/PopUpWithImage.js";
+import { PopupWithConfirmation } from "../components/PopupWithConfirmation.js";
 
-import { PopUpDeleteCard } from "../components/PopUpDeleteCard.js";
+import { PopupDeleteCard } from "../components/PopupDeleteCard.js";
 
 export class Card {
   constructor(name, link, idCard, likes, user, cardSelector) {
@@ -55,6 +55,7 @@ export class Card {
     this._element = this._getTemplate();
     this._setEventListeners();
     this._cardPhotoItem.src = this._image;
+    this._cardPhotoItem.alt = "Imagen ilustrativa de " + this._title;
     this._cardTitle.textContent = this._title;
     this._contLikes.textContent = this._likes.length;
     return this._element;
@@ -62,8 +63,8 @@ export class Card {
 
   _setEventListeners() {
     this._cardPhotoItem.addEventListener("click", () => {
-      const popupImage = new PopUpWithImage(
-        contentPopUpImage,
+      const popupImage = new PopupWithConfirmation(
+        contentPopupImage,
         "content-pop-up_visibility_visible",
         buttonCloseModalImage,
         this._image,
@@ -73,8 +74,8 @@ export class Card {
     });
 
     this._deleteButton.addEventListener("click", () => {
-      const popupDelete = new PopUpDeleteCard(
-        contentPopUpDeleteCard,
+      const popupDelete = new PopupDeleteCard(
+        contentPopupDeleteCard,
         "content-modal_visibility_visible",
         buttonCloseModalDeleteCard,
         buttonSubmitDeleteCard,
@@ -103,7 +104,7 @@ export class Card {
           .catch((err) => {
             console.log(err);
           })
-          .finally((result) => {
+          .finally(() => {
             this._isLiked = !this._isLiked;
             this._likeButton.classList.add("heart-button__icon_liked");
           });
@@ -125,7 +126,7 @@ export class Card {
           .catch((err) => {
             console.log(err);
           })
-          .finally((result) => {
+          .finally(() => {
             this._isLiked = !this._isLiked;
             this._likeButton.classList.remove("heart-button__icon_liked");
           });

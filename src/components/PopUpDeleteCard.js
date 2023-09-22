@@ -1,34 +1,34 @@
-import { PopUp } from "./PopUp.js";
+import { Popup } from "./Popup.js";
 import { Api } from "../components/Api.js";
 
-export class PopUpDeleteCard extends PopUp {
+export class PopupDeleteCard extends Popup {
   constructor(
-    contentPopUp,
-    contentPopUpSelector,
-    closeButtonPopUp,
-    submitButtonPopUp,
+    contentPopup,
+    contentPopupSelector,
+    closeButtonPopup,
+    submitButtonPopup,
     card,
     idCard
   ) {
-    super(contentPopUp, contentPopUpSelector, closeButtonPopUp);
-    this._submitButtonPopUp = submitButtonPopUp;
+    super(contentPopup, contentPopupSelector, closeButtonPopup);
+    this._submitButtonPopup = submitButtonPopup;
     this._card = card;
     this._idCard = idCard;
-    this._submitPopUp = this._submitPopUp.bind(this);
+    this._submitPopup = this._submitPopup.bind(this);
   }
 
   _addEvents() {
     super._addEvents();
-    this._submitButtonPopUp.addEventListener("click", this._submitPopUp);
+    this._submitButtonPopup.addEventListener("click", this._submitPopup);
   }
 
   _removeEvents() {
     super._removeEvents();
-    this._submitButtonPopUp.removeEventListener("click", this._submitPopUp);
+    this._submitButtonPopup.removeEventListener("click", this._submitPopup);
   }
 
-  _submitPopUp() {
-    this._submitButtonPopUp.textContent = "Eliminando...";
+  _submitPopup() {
+    this._submitButtonPopup.textContent = "Eliminando...";
     const deleteCard = new Api({
       baseUrl: `cards/${this._idCard}`,
       method: "DELETE",
@@ -41,21 +41,18 @@ export class PopUpDeleteCard extends PopUp {
 
     deleteCard
       .card()
-      .then((result) => {
-        console.log(result);
-      })
       .catch((err) => {
-        this._closePopUp();
+        this._closePopup();
         console.log(err);
       })
       .finally(() => {
-        this._closePopUp();
+        this._closePopup();
         this._card.remove();
-        this._submitButtonPopUp.textContent = "Eliminar";
+        this._submitButtonPopup.textContent = "Eliminar";
       });
   }
 
   setEventListeners() {
-    this._openPopUp();
+    this._openPopup();
   }
 }
