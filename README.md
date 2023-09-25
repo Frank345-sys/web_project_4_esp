@@ -31,7 +31,6 @@ Este proyecto es el resultado de lo aprendido de los sprints: 4-10 del bootcamp 
 ![preview de web pc javascript](./src/images/captura-pantalla-modal.png)
 ![preview de web pc javascript](./src/images/captura-pantalla-modal-1.png)
 ![preview de web pc javascript](./src/images/captura-pantalla-modal-2.png)
-![preview de web pc javascript](./src/images/captura-pantalla-modal-3.png)
 
 ## Nota
 
