@@ -18,17 +18,17 @@ Este proyecto es el resultado de lo aprendido de los sprints: 1, 2 y 3 del bootc
 - Trabajar con clases para los elementos del DOM: className, classList, id, etc.
 - Eventos en especifico addEventListener("click", funtion-name).
 
-## Vistas previas del proyecto
+## Vistas previas del diseño responsivo proyecto
 
-### Vistas diseño pc
+### Vistas diseño pc min-width 1024px
 
-![preview de web pc](./src./src/images/captura-pagina-pc-laptop.png)
+![preview de web pc](./src/images/captura-pagina-pc-laptop.png)
 
-### Vistas diseño para tablets
+### Vistas diseño para tablets min-width 768px y max-width 1024px
 
 ![preview de web tablet](./src/images/captura-pagina-tablet.png)
 
-### Vistas diseño para dispositivos móviles
+### Vistas diseño para dispositivos móviles max-width 768px
 
 ![preview de web móvil](./src/images/captura-pagina-movil.png)
 
