@@ -31,7 +31,7 @@ export class UserInfo {
   async setUserInfo(name, occupation) {
     try {
       const setProfile = new Api({
-        baseUrl: `users/me`,
+        baseUrl: "users/me",
         method: "PATCH",
         body: JSON.stringify({
           name: name,
